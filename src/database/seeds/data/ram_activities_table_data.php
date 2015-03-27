@@ -1,0 +1,3 @@
+<?php
+
+return [[0,'None','','No activity',1],[1,'Manufacturing','18_02','Manufacturing',1],[2,'Researching Technology','33_02','Technological research',0],[3,'Researching Time Efficiency','33_02','Researching time efficiency',1],[4,'Researching Material Efficiency','33_02','Researching material efficiency',1],[5,'Copying','33_02','Copying',1],[6,'Duplicating','','The process of creating an item, by studying an already existing item.',0],[7,'Reverse Engineering','33_02','The process of creating a blueprint from an item.',1],[8,'Invention','33_02','The process of creating a more advanced item based on an existing item',1]];

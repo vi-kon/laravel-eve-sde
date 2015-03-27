@@ -1,0 +1,3 @@
+<?php
+
+return [[1,'Bounty Missions',''],[2,'Assassination Missions',''],[4,'Courier Missions',''],[8,'Interbus',''],[16,'Reprocessing Plant',''],[32,'Refinery',''],[64,'Market',''],[128,'Black Market',''],[256,'Stock Exchange',''],[512,'Cloning',''],[1024,'Surgery',''],[2048,'DNA Therapy',''],[4096,'Repair Facilities',''],[8192,'Factory',''],[16384,'Laboratory',''],[32768,'Gambling',''],[65536,'Fitting',''],[131072,'Paintshop',''],[262144,'News',''],[524288,'Storage',''],[1048576,'Insurance','Used to buy insurance for ships.'],[2097152,'Docking',''],[4194304,'Office Rental',''],[8388608,'Jump Clone Facility',''],[16777216,'Loyalty Point Store',''],[33554432,'Navy Offices',''],[67108864,'Security Office','']];

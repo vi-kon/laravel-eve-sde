@@ -17,10 +17,8 @@ class CreateRamInstallationTypeContentsTable extends Migration {
     public function up() {
         Schema::create('ram_installation_type_contents', function (Blueprint $table) {
             $table->integer('installation_type_id');
-            $table->tinyInteger('assembly_line_type_id')
-                ->unsigned();
-            $table->tinyInteger('quantity')
-                ->unsigned()
+            $table->smallInteger('assembly_line_type_id');
+            $table->smallInteger('quantity')
                 ->nullable()
                 ->default(null);
 

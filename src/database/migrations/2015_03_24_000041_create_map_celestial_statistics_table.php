@@ -32,7 +32,7 @@ class CreateMapCelestialStatisticsTable extends Migration {
             $table->float('life')
                 ->nullable()
                 ->default(null);
-            $table->float('ortinyint_radius')
+            $table->float('orbit_radius')
                 ->nullable()
                 ->default(null);
             $table->float('eccentricity')
@@ -56,7 +56,7 @@ class CreateMapCelestialStatisticsTable extends Migration {
             $table->float('escape_velocity')
                 ->nullable()
                 ->default(null);
-            $table->float('ortinyint_period')
+            $table->float('orbit_period')
                 ->nullable()
                 ->default(null);
             $table->float('rotation_rate')

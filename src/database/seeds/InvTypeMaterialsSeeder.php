@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\TypeMaterials;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\TypeMaterial;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvTypeMaterialsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,8 +26,8 @@ class InvTypeMaterialsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_type_materials table');
-        $this->setProgressMax(33365);
+        $this->startProgress('<info>Inserting data:</info> inv_type_materials');
+        $this->setProgressMax(33364);
 
         $data = include(__DIR__ . '/data/inv_type_materials_table_data.php');
         foreach ($data as $row) {
@@ -40,7 +40,7 @@ class InvTypeMaterialsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        TypeMaterials::create($data);
+        TypeMaterial::create($data);
         $this->progress();
     }
 

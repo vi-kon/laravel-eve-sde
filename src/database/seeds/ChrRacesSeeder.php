@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Character\Races;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Character\Race;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class ChrRacesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -28,7 +28,7 @@ class ChrRacesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed chr_races table');
+        $this->startProgress('<info>Inserting data:</info> chr_races');
         $this->setProgressMax(8);
 
         $data = include(__DIR__ . '/data/chr_races_table_data.php');
@@ -42,7 +42,7 @@ class ChrRacesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Races::create($data);
+        Race::create($data);
         $this->progress();
     }
 

@@ -56,25 +56,25 @@ class CreateMapSolarSystemsTable extends Migration {
             $table->float('luminosity')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('border')
+            $table->boolean('border')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('fringe')
+            $table->boolean('fringe')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('corridor')
+            $table->boolean('corridor')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('hub')
+            $table->boolean('hub')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('international')
+            $table->boolean('international')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('regional')
+            $table->boolean('regional')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('constellation')
+            $table->boolean('constellation')
                 ->nullable()
                 ->default(null);
             $table->float('security')

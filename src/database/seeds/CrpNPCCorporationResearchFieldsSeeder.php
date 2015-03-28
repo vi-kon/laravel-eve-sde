@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Corporation\NPCCorporationResearchFields;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class CrpNPCCorporationResearchFieldsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class CrpNPCCorporationResearchFieldsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed crp_n_p_c_corporation_research_fields table');
+        $this->startProgress('<info>Inserting data:</info> crp_n_p_c_corporation_research_fields');
         $this->setProgressMax(48);
 
         $data = include(__DIR__ . '/data/crp_n_p_c_corporation_research_fields_table_data.php');
@@ -39,7 +39,7 @@ class CrpNPCCorporationResearchFieldsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        NPCCorporationResearchFields::create($data);
+        NPCCorporationResearchField::create($data);
         $this->progress();
     }
 

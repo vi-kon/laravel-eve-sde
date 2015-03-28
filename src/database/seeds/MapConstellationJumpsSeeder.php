@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\ConstellationJumps;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\ConstellationJump;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapConstellationJumpsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class MapConstellationJumpsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_constellation_jumps table');
+        $this->startProgress('<info>Inserting data:</info> map_constellation_jumps');
         $this->setProgressMax(2292);
 
         $data = include(__DIR__ . '/data/map_constellation_jumps_table_data.php');
@@ -41,7 +41,7 @@ class MapConstellationJumpsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        ConstellationJumps::create($data);
+        ConstellationJump::create($data);
         $this->progress();
     }
 

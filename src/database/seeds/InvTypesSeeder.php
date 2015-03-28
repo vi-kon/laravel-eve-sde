@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\Types;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\Type;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvTypesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -36,8 +36,8 @@ class InvTypesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_types table');
-        $this->setProgressMax(22481);
+        $this->startProgress('<info>Inserting data:</info> inv_types');
+        $this->setProgressMax(22531);
 
         $data = include(__DIR__ . '/data/inv_types_table_data.php');
         foreach ($data as $row) {
@@ -50,7 +50,7 @@ class InvTypesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Types::create($data);
+        Type::create($data);
         $this->progress();
     }
 

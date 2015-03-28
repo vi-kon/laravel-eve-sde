@@ -35,8 +35,7 @@ class CreateDgmAttributeTypesTable extends Migration {
             $table->string('display_name', 100)
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('unit_id')
-                ->unsigned()
+            $table->smallInteger('unit_id')
                 ->nullable()
                 ->default(null);
             $table->boolean('stackable')
@@ -45,8 +44,7 @@ class CreateDgmAttributeTypesTable extends Migration {
             $table->boolean('high_is_good')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('category_id')
-                ->unsigned()
+            $table->smallInteger('category_id')
                 ->nullable()
                 ->default(null);
 

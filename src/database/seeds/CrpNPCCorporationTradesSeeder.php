@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Corporation\NPCCorporationTrades;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Corporation\NPCCorporationTrade;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class CrpNPCCorporationTradesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,8 +25,8 @@ class CrpNPCCorporationTradesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed crp_n_p_c_corporation_trades table');
-        $this->setProgressMax(17752);
+        $this->startProgress('<info>Inserting data:</info> crp_n_p_c_corporation_trades');
+        $this->setProgressMax(17923);
 
         $data = include(__DIR__ . '/data/crp_n_p_c_corporation_trades_table_data.php');
         foreach ($data as $row) {
@@ -39,7 +39,7 @@ class CrpNPCCorporationTradesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        NPCCorporationTrades::create($data);
+        NPCCorporationTrade::create($data);
         $this->progress();
     }
 

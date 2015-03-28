@@ -21,7 +21,6 @@ class CreateCrpNPCCorporationTradesTable extends Migration {
 
 
             $table->primary(['corporation_id', 'type_id'], 'prim');
-            $table->index('type_id', 'type_id');
 
 
             $table->foreign('corporation_id', 'crp_n_p_c_corporation_trades_ibfk_1')

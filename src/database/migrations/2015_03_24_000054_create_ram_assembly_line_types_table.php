@@ -16,8 +16,7 @@ class CreateRamAssemblyLineTypesTable extends Migration {
      */
     public function up() {
         Schema::create('ram_assembly_line_types', function (Blueprint $table) {
-            $table->tinyInteger('assembly_line_type_id')
-                ->unsigned();
+            $table->smallInteger('assembly_line_type_id');
             $table->string('assembly_line_type_name', 100)
                 ->nullable()
                 ->default(null);
@@ -36,8 +35,7 @@ class CreateRamAssemblyLineTypesTable extends Migration {
             $table->float('volume')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('activity_id')
-                ->unsigned()
+            $table->smallInteger('activity_id')
                 ->nullable()
                 ->default(null);
             $table->float('min_cost_per_hour')

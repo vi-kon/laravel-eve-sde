@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Planet\Schematics;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Planet\Schematic;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class PlanetSchematicsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,7 +26,7 @@ class PlanetSchematicsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed planet_schematics table');
+        $this->startProgress('<info>Inserting data:</info> planet_schematics');
         $this->setProgressMax(68);
 
         $data = include(__DIR__ . '/data/planet_schematics_table_data.php');
@@ -40,7 +40,7 @@ class PlanetSchematicsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Schematics::create($data);
+        Schematic::create($data);
         $this->progress();
     }
 

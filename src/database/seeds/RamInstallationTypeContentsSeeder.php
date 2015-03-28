@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Ram\InstallationTypeContents;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Ram\InstallationTypeContent;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class RamInstallationTypeContentsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,7 +26,7 @@ class RamInstallationTypeContentsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed ram_installation_type_contents table');
+        $this->startProgress('<info>Inserting data:</info> ram_installation_type_contents');
         $this->setProgressMax(362);
 
         $data = include(__DIR__ . '/data/ram_installation_type_contents_table_data.php');
@@ -40,7 +40,7 @@ class RamInstallationTypeContentsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        InstallationTypeContents::create($data);
+        InstallationTypeContent::create($data);
         $this->progress();
     }
 

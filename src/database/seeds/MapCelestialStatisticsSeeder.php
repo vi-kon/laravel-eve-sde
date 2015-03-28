@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\CelestialStatistics;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\CelestialStatistic;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapCelestialStatisticsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -16,7 +16,7 @@ class MapCelestialStatisticsSeeder extends Seeder {
         3  => 'luminosity',
         4  => 'age',
         5  => 'life',
-        6  => 'ortinyint_radius',
+        6  => 'orbit_radius',
         7  => 'eccentricity',
         8  => 'mass_dust',
         9  => 'mass_gas',
@@ -24,7 +24,7 @@ class MapCelestialStatisticsSeeder extends Seeder {
         11 => 'density',
         12 => 'surface_gravity',
         13 => 'escape_velocity',
-        14 => 'ortinyint_period',
+        14 => 'orbit_period',
         15 => 'rotation_rate',
         16 => 'locked',
         17 => 'pressure',
@@ -43,7 +43,7 @@ class MapCelestialStatisticsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_celestial_statistics table');
+        $this->startProgress('<info>Inserting data:</info> map_celestial_statistics');
         $this->setProgressMax(471537);
 
         $data = include(__DIR__ . '/data/map_celestial_statistics_table_data.php');
@@ -57,7 +57,7 @@ class MapCelestialStatisticsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        CelestialStatistics::create($data);
+        CelestialStatistic::create($data);
         $this->progress();
     }
 

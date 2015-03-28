@@ -21,7 +21,6 @@ class CreateMapRegionJumpsTable extends Migration {
 
 
             $table->primary(['from_region_id', 'to_region_id'], 'prim');
-            $table->index('to_region_id', 'to_region_id');
 
 
             $table->foreign('from_region_id', 'map_region_jumps_ibfk_1')

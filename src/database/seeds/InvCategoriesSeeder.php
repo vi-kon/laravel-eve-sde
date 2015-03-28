@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\Categories;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\Category;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvCategoriesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -28,7 +28,7 @@ class InvCategoriesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_categories table');
+        $this->startProgress('<info>Inserting data:</info> inv_categories');
         $this->setProgressMax(39);
 
         $data = include(__DIR__ . '/data/inv_categories_table_data.php');
@@ -42,7 +42,7 @@ class InvCategoriesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Categories::create($data);
+        Category::create($data);
         $this->progress();
     }
 

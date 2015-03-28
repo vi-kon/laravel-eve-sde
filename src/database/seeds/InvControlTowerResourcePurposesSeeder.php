@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurposes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvControlTowerResourcePurposesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class InvControlTowerResourcePurposesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_control_tower_resource_purposes table');
+        $this->startProgress('<info>Inserting data:</info> inv_control_tower_resource_purposes');
         $this->setProgressMax(4);
 
         $data = include(__DIR__ . '/data/inv_control_tower_resource_purposes_table_data.php');
@@ -39,7 +39,7 @@ class InvControlTowerResourcePurposesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        ControlTowerResourcePurposes::create($data);
+        ControlTowerResourcePurpose::create($data);
         $this->progress();
     }
 

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\LocationWormholeClasses;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\LocationWormholeClass;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapLocationWormholeClassesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class MapLocationWormholeClassesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_location_wormhole_classes table');
+        $this->startProgress('<info>Inserting data:</info> map_location_wormhole_classes');
         $this->setProgressMax(793);
 
         $data = include(__DIR__ . '/data/map_location_wormhole_classes_table_data.php');
@@ -39,7 +39,7 @@ class MapLocationWormholeClassesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        LocationWormholeClasses::create($data);
+        LocationWormholeClass::create($data);
         $this->progress();
     }
 

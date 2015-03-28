@@ -35,12 +35,10 @@ class CreateStaStationTypesTable extends Migration {
             $table->float('dock_orientation_z')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('operation_id')
-                ->unsigned()
+            $table->smallInteger('operation_id')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('office_slots')
-                ->unsigned()
+            $table->smallInteger('office_slots')
                 ->nullable()
                 ->default(null);
             $table->float('reprocessing_efficiency')

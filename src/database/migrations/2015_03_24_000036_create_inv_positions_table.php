@@ -17,9 +17,12 @@ class CreateInvPositionsTable extends Migration {
     public function up() {
         Schema::create('inv_positions', function (Blueprint $table) {
             $table->bigInteger('item_id');
-            $table->float('x');
-            $table->float('y');
-            $table->float('z');
+            $table->float('x')
+                ->default('0.00');
+            $table->float('y')
+                ->default('0.00');
+            $table->float('z')
+                ->default('0.00');
             $table->float('yaw')
                 ->nullable()
                 ->default(null);

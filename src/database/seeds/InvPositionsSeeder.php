@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\Positions;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\Position;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvPositionsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -30,7 +30,7 @@ class InvPositionsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_positions table');
+        $this->startProgress('<info>Inserting data:</info> inv_positions');
         $this->setProgressMax(508331);
 
         $data = include(__DIR__ . '/data/inv_positions_table_data.php');
@@ -44,7 +44,7 @@ class InvPositionsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Positions::create($data);
+        Position::create($data);
         $this->progress();
     }
 

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Ram\AssemblyLineStations;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Ram\AssemblyLineStation;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class RamAssemblyLineStationsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -30,7 +30,7 @@ class RamAssemblyLineStationsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed ram_assembly_line_stations table');
+        $this->startProgress('<info>Inserting data:</info> ram_assembly_line_stations');
         $this->setProgressMax(4393);
 
         $data = include(__DIR__ . '/data/ram_assembly_line_stations_table_data.php');
@@ -44,7 +44,7 @@ class RamAssemblyLineStationsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        AssemblyLineStations::create($data);
+        AssemblyLineStation::create($data);
         $this->progress();
     }
 

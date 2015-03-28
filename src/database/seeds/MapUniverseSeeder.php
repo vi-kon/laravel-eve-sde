@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use ViKon\EveSDE\Models\Map\Universe;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapUniverseSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -35,7 +35,7 @@ class MapUniverseSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_universe table');
+        $this->startProgress('<info>Inserting data:</info> map_universe');
         $this->setProgressMax(2);
 
         $data = include(__DIR__ . '/data/map_universe_table_data.php');

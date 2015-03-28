@@ -16,8 +16,7 @@ class CreateChrAttributesTable extends Migration {
      */
     public function up() {
         Schema::create('chr_attributes', function (Blueprint $table) {
-            $table->tinyInteger('attribute_id')
-                ->unsigned();
+            $table->smallInteger('attribute_id');
             $table->string('attribute_name', 100)
                 ->nullable()
                 ->default(null);

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\Names;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\Name;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvNamesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class InvNamesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_names table');
+        $this->startProgress('<info>Inserting data:</info> inv_names');
         $this->setProgressMax(519863);
 
         $data = include(__DIR__ . '/data/inv_names_table_data.php');
@@ -39,7 +39,7 @@ class InvNamesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Names::create($data);
+        Name::create($data);
         $this->progress();
     }
 

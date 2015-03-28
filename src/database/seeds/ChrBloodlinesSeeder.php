@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Character\Bloodlines;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Character\Bloodline;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class ChrBloodlinesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -40,7 +40,7 @@ class ChrBloodlinesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed chr_bloodlines table');
+        $this->startProgress('<info>Inserting data:</info> chr_bloodlines');
         $this->setProgressMax(15);
 
         $data = include(__DIR__ . '/data/chr_bloodlines_table_data.php');
@@ -54,7 +54,7 @@ class ChrBloodlinesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Bloodlines::create($data);
+        Bloodline::create($data);
         $this->progress();
     }
 

@@ -16,8 +16,7 @@ class CreateStaOperationServicesTable extends Migration {
      */
     public function up() {
         Schema::create('sta_operation_services', function (Blueprint $table) {
-            $table->tinyInteger('operation_id')
-                ->unsigned();
+            $table->smallInteger('operation_id');
             $table->integer('service_id');
 
 

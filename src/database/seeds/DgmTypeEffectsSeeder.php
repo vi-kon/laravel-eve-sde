@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Damage\TypeEffects;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Damage\TypeEffect;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class DgmTypeEffectsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,8 +26,8 @@ class DgmTypeEffectsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed dgm_type_effects table');
-        $this->setProgressMax(36498);
+        $this->startProgress('<info>Inserting data:</info> dgm_type_effects');
+        $this->setProgressMax(36515);
 
         $data = include(__DIR__ . '/data/dgm_type_effects_table_data.php');
         foreach ($data as $row) {
@@ -40,7 +40,7 @@ class DgmTypeEffectsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        TypeEffects::create($data);
+        TypeEffect::create($data);
         $this->progress();
     }
 

@@ -27,7 +27,6 @@ class CreatePlanetSchematicsTypeMapTable extends Migration {
 
 
             $table->primary(['schematic_id', 'type_id'], 'prim');
-            $table->index('type_id', 'type_id');
 
 
             $table->foreign('schematic_id', 'planet_schematics_type_map_ibfk_1')

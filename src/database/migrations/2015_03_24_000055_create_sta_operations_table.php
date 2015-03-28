@@ -16,36 +16,29 @@ class CreateStaOperationsTable extends Migration {
      */
     public function up() {
         Schema::create('sta_operations', function (Blueprint $table) {
-            $table->tinyInteger('activity_id')
-                ->unsigned()
+            $table->smallInteger('activity_id')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('operation_id')
-                ->unsigned();
+            $table->smallInteger('operation_id');
             $table->string('operation_name', 100)
                 ->nullable()
                 ->default(null);
             $table->string('description', 1000)
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('fringe')
-                ->unsigned()
+            $table->smallInteger('fringe')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('corridor')
-                ->unsigned()
+            $table->smallInteger('corridor')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('hub')
-                ->unsigned()
+            $table->smallInteger('hub')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('border')
-                ->unsigned()
+            $table->smallInteger('border')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('ratio')
-                ->unsigned()
+            $table->smallInteger('ratio')
                 ->nullable()
                 ->default(null);
             $table->integer('caldari_station_type_id')

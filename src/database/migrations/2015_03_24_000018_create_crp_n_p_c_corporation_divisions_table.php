@@ -17,16 +17,13 @@ class CreateCrpNPCCorporationDivisionsTable extends Migration {
     public function up() {
         Schema::create('crp_n_p_c_corporation_divisions', function (Blueprint $table) {
             $table->integer('corporation_id');
-            $table->tinyInteger('division_id')
-                ->unsigned();
-            $table->tinyInteger('size')
-                ->unsigned()
+            $table->smallInteger('division_id');
+            $table->smallInteger('size')
                 ->nullable()
                 ->default(null);
 
 
             $table->primary(['corporation_id', 'division_id'], 'prim');
-            $table->index('division_id', 'division_id');
 
 
             $table->foreign('corporation_id', 'crp_n_p_c_corporation_divisions_ibfk_1')

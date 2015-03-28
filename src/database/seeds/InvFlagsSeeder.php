@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\Flags;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\Flag;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvFlagsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class InvFlagsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_flags table');
+        $this->startProgress('<info>Inserting data:</info> inv_flags');
         $this->setProgressMax(133);
 
         $data = include(__DIR__ . '/data/inv_flags_table_data.php');
@@ -41,7 +41,7 @@ class InvFlagsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Flags::create($data);
+        Flag::create($data);
         $this->progress();
     }
 

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\MetaGroups;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\MetaGroup;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvMetaGroupsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class InvMetaGroupsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_meta_groups table');
+        $this->startProgress('<info>Inserting data:</info> inv_meta_groups');
         $this->setProgressMax(14);
 
         $data = include(__DIR__ . '/data/inv_meta_groups_table_data.php');
@@ -41,7 +41,7 @@ class InvMetaGroupsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        MetaGroups::create($data);
+        MetaGroup::create($data);
         $this->progress();
     }
 

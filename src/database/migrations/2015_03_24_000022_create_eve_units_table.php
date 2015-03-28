@@ -16,8 +16,7 @@ class CreateEveUnitsTable extends Migration {
      */
     public function up() {
         Schema::create('eve_units', function (Blueprint $table) {
-            $table->tinyInteger('unit_id')
-                ->unsigned();
+            $table->smallInteger('unit_id');
             $table->string('unit_name', 100)
                 ->nullable()
                 ->default(null);

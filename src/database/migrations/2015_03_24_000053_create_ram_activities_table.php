@@ -16,8 +16,7 @@ class CreateRamActivitiesTable extends Migration {
      */
     public function up() {
         Schema::create('ram_activities', function (Blueprint $table) {
-            $table->tinyInteger('activity_id')
-                ->unsigned();
+            $table->smallInteger('activity_id');
             $table->string('activity_name', 100)
                 ->nullable()
                 ->default(null);

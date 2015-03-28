@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Character\Factions;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Character\Faction;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class ChrFactionsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -34,7 +34,7 @@ class ChrFactionsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed chr_factions table');
+        $this->startProgress('<info>Inserting data:</info> chr_factions');
         $this->setProgressMax(20);
 
         $data = include(__DIR__ . '/data/chr_factions_table_data.php');
@@ -48,7 +48,7 @@ class ChrFactionsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Factions::create($data);
+        Faction::create($data);
         $this->progress();
     }
 

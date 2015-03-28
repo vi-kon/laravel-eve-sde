@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\Landmarks;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\Landmark;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapLandmarksSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -31,7 +31,7 @@ class MapLandmarksSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_landmarks table');
+        $this->startProgress('<info>Inserting data:</info> map_landmarks');
         $this->setProgressMax(45);
 
         $data = include(__DIR__ . '/data/map_landmarks_table_data.php');
@@ -45,7 +45,7 @@ class MapLandmarksSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Landmarks::create($data);
+        Landmark::create($data);
         $this->progress();
     }
 

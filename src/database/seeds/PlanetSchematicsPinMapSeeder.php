@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use ViKon\EveSDE\Models\Planet\SchematicsPinMap;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class PlanetSchematicsPinMapSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class PlanetSchematicsPinMapSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed planet_schematics_pin_map table');
+        $this->startProgress('<info>Inserting data:</info> planet_schematics_pin_map');
         $this->setProgressMax(496);
 
         $data = include(__DIR__ . '/data/planet_schematics_pin_map_table_data.php');

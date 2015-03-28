@@ -80,8 +80,7 @@ class CreateDgmEffectsTable extends Migration {
             $table->boolean('propulsion_chance')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('distribution')
-                ->unsigned()
+            $table->smallInteger('distribution')
                 ->nullable()
                 ->default(null);
             $table->string('sfx_name', 20)

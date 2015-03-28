@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Character\Attributes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Character\Attribute;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class ChrAttributesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -29,7 +29,7 @@ class ChrAttributesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed chr_attributes table');
+        $this->startProgress('<info>Inserting data:</info> chr_attributes');
         $this->setProgressMax(5);
 
         $data = include(__DIR__ . '/data/chr_attributes_table_data.php');
@@ -43,7 +43,7 @@ class ChrAttributesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Attributes::create($data);
+        Attribute::create($data);
         $this->progress();
     }
 

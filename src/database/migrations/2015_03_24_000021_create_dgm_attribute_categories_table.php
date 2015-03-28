@@ -16,8 +16,7 @@ class CreateDgmAttributeCategoriesTable extends Migration {
      */
     public function up() {
         Schema::create('dgm_attribute_categories', function (Blueprint $table) {
-            $table->tinyInteger('category_id')
-                ->unsigned();
+            $table->smallInteger('category_id');
             $table->string('category_name', 50)
                 ->nullable()
                 ->default(null);

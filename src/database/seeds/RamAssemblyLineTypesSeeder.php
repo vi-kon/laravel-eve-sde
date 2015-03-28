@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Ram\AssemblyLineTypes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Ram\AssemblyLineType;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class RamAssemblyLineTypesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -32,7 +32,7 @@ class RamAssemblyLineTypesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed ram_assembly_line_types table');
+        $this->startProgress('<info>Inserting data:</info> ram_assembly_line_types');
         $this->setProgressMax(134);
 
         $data = include(__DIR__ . '/data/ram_assembly_line_types_table_data.php');
@@ -46,7 +46,7 @@ class RamAssemblyLineTypesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        AssemblyLineTypes::create($data);
+        AssemblyLineType::create($data);
         $this->progress();
     }
 

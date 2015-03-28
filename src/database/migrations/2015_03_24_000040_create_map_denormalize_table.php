@@ -32,7 +32,7 @@ class CreateMapDenormalizeTable extends Migration {
             $table->integer('region_id')
                 ->nullable()
                 ->default(null);
-            $table->integer('ortinyint_id')
+            $table->integer('orbit_id')
                 ->nullable()
                 ->default(null);
             $table->float('x')
@@ -56,7 +56,7 @@ class CreateMapDenormalizeTable extends Migration {
             $table->integer('celestial_index')
                 ->nullable()
                 ->default(null);
-            $table->integer('ortinyint_index')
+            $table->integer('orbit_index')
                 ->nullable()
                 ->default(null);
 
@@ -68,7 +68,7 @@ class CreateMapDenormalizeTable extends Migration {
             $table->index('solar_system_id', 'map_denormalize__i_x_system');
             $table->index('constellation_id', 'map_denormalize__i_x_constellation');
             $table->index('region_id', 'map_denormalize__i_x_region');
-            $table->index('ortinyint_id', 'map_denormalize__i_x_ortinyint');
+            $table->index('orbit_id', 'map_denormalize__i_x_orbit');
             $table->index('type_id', 'type_id');
 
 
@@ -92,7 +92,7 @@ class CreateMapDenormalizeTable extends Migration {
                 ->references('region_id')
                 ->on('map_regions');
 
-            $table->foreign('ortinyint_id', 'map_denormalize_ibfk_6')
+            $table->foreign('orbit_id', 'map_denormalize_ibfk_6')
                 ->references('item_id')
                 ->on('map_denormalize');
 

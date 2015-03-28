@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\TypeReactions;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\TypeReaction;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvTypeReactionsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class InvTypeReactionsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_type_reactions table');
+        $this->startProgress('<info>Inserting data:</info> inv_type_reactions');
         $this->setProgressMax(372);
 
         $data = include(__DIR__ . '/data/inv_type_reactions_table_data.php');
@@ -41,7 +41,7 @@ class InvTypeReactionsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        TypeReactions::create($data);
+        TypeReaction::create($data);
         $this->progress();
     }
 

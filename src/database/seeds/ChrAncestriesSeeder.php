@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Character\Ancestries;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Character\Ancestry;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class ChrAncestriesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -34,7 +34,7 @@ class ChrAncestriesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed chr_ancestries table');
+        $this->startProgress('<info>Inserting data:</info> chr_ancestries');
         $this->setProgressMax(42);
 
         $data = include(__DIR__ . '/data/chr_ancestries_table_data.php');
@@ -48,7 +48,7 @@ class ChrAncestriesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Ancestries::create($data);
+        Ancestry::create($data);
         $this->progress();
     }
 

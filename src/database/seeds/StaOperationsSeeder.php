@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Station\Operations;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Station\Operation;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class StaOperationsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -37,7 +37,7 @@ class StaOperationsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed sta_operations table');
+        $this->startProgress('<info>Inserting data:</info> sta_operations');
         $this->setProgressMax(55);
 
         $data = include(__DIR__ . '/data/sta_operations_table_data.php');
@@ -51,7 +51,7 @@ class StaOperationsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Operations::create($data);
+        Operation::create($data);
         $this->progress();
     }
 

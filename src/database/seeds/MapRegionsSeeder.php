@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\Regions;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\Region;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapRegionsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -36,7 +36,7 @@ class MapRegionsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_regions table');
+        $this->startProgress('<info>Inserting data:</info> map_regions');
         $this->setProgressMax(99);
 
         $data = include(__DIR__ . '/data/map_regions_table_data.php');
@@ -50,7 +50,7 @@ class MapRegionsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Regions::create($data);
+        Region::create($data);
         $this->progress();
     }
 

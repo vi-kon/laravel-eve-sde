@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\Jumps;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\Jump;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapJumpsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class MapJumpsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_jumps table');
+        $this->startProgress('<info>Inserting data:</info> map_jumps');
         $this->setProgressMax(13826);
 
         $data = include(__DIR__ . '/data/map_jumps_table_data.php');
@@ -39,7 +39,7 @@ class MapJumpsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Jumps::create($data);
+        Jump::create($data);
         $this->progress();
     }
 

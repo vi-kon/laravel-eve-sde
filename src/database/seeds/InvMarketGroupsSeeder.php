@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\MarketGroups;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\MarketGroup;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvMarketGroupsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -29,8 +29,8 @@ class InvMarketGroupsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_market_groups table');
-        $this->setProgressMax(1766);
+        $this->startProgress('<info>Inserting data:</info> inv_market_groups');
+        $this->setProgressMax(1774);
 
         $data = include(__DIR__ . '/data/inv_market_groups_table_data.php');
         foreach ($data as $row) {
@@ -43,7 +43,7 @@ class InvMarketGroupsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        MarketGroups::create($data);
+        MarketGroup::create($data);
         $this->progress();
     }
 

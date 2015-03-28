@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\LocationScenes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\LocationScene;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapLocationScenesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -25,7 +25,7 @@ class MapLocationScenesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_location_scenes table');
+        $this->startProgress('<info>Inserting data:</info> map_location_scenes');
         $this->setProgressMax(99);
 
         $data = include(__DIR__ . '/data/map_location_scenes_table_data.php');
@@ -39,7 +39,7 @@ class MapLocationScenesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        LocationScenes::create($data);
+        LocationScene::create($data);
         $this->progress();
     }
 

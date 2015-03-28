@@ -16,8 +16,7 @@ class CreateInvControlTowerResourcePurposesTable extends Migration {
      */
     public function up() {
         Schema::create('inv_control_tower_resource_purposes', function (Blueprint $table) {
-            $table->tinyInteger('purpose')
-                ->unsigned();
+            $table->smallInteger('purpose');
             $table->string('purpose_text', 100)
                 ->nullable()
                 ->default(null);

@@ -16,8 +16,7 @@ class CreateChrRacesTable extends Migration {
      */
     public function up() {
         Schema::create('chr_races', function (Blueprint $table) {
-            $table->tinyInteger('race_id')
-                ->unsigned();
+            $table->smallInteger('race_id');
             $table->string('race_name', 100)
                 ->nullable()
                 ->default(null);

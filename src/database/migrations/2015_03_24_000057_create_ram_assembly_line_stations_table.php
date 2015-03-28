@@ -17,10 +17,8 @@ class CreateRamAssemblyLineStationsTable extends Migration {
     public function up() {
         Schema::create('ram_assembly_line_stations', function (Blueprint $table) {
             $table->integer('station_id');
-            $table->tinyInteger('assembly_line_type_id')
-                ->unsigned();
-            $table->tinyInteger('quantity')
-                ->unsigned()
+            $table->smallInteger('assembly_line_type_id');
+            $table->smallInteger('quantity')
                 ->nullable()
                 ->default(null);
             $table->integer('station_type_id')

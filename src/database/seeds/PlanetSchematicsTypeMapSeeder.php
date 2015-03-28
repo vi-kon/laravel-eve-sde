@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use ViKon\EveSDE\Models\Planet\SchematicsTypeMap;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class PlanetSchematicsTypeMapSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class PlanetSchematicsTypeMapSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed planet_schematics_type_map table');
+        $this->startProgress('<info>Inserting data:</info> planet_schematics_type_map');
         $this->setProgressMax(203);
 
         $data = include(__DIR__ . '/data/planet_schematics_type_map_table_data.php');

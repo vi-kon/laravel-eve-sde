@@ -22,7 +22,6 @@ class CreateInvTypeMaterialsTable extends Migration {
 
 
             $table->primary(['type_id', 'material_type_id'], 'prim');
-            $table->index('material_type_id', 'material_type_id');
 
 
             $table->foreign('type_id', 'inv_type_materials_ibfk_1')

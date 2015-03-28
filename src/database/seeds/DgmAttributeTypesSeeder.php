@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Damage\AttributeTypes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Damage\AttributeType;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class DgmAttributeTypesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -34,8 +34,8 @@ class DgmAttributeTypesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed dgm_attribute_types table');
-        $this->setProgressMax(1798);
+        $this->startProgress('<info>Inserting data:</info> dgm_attribute_types');
+        $this->setProgressMax(1799);
 
         $data = include(__DIR__ . '/data/dgm_attribute_types_table_data.php');
         foreach ($data as $row) {
@@ -48,7 +48,7 @@ class DgmAttributeTypesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        AttributeTypes::create($data);
+        AttributeType::create($data);
         $this->progress();
     }
 

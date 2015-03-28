@@ -25,7 +25,6 @@ class CreateInvTypeReactionsTable extends Migration {
 
 
             $table->primary(['reaction_type_id', 'input', 'type_id'], 'prim');
-            $table->index('type_id', 'type_id');
 
 
             $table->foreign('reaction_type_id', 'inv_type_reactions_ibfk_1')

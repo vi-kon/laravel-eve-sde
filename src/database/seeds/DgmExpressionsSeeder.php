@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Damage\Expressions;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Damage\Expression;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class DgmExpressionsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -33,8 +33,8 @@ class DgmExpressionsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed dgm_expressions table');
-        $this->setProgressMax(17192);
+        $this->startProgress('<info>Inserting data:</info> dgm_expressions');
+        $this->setProgressMax(17235);
 
         $data = include(__DIR__ . '/data/dgm_expressions_table_data.php');
         foreach ($data as $row) {
@@ -47,7 +47,7 @@ class DgmExpressionsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Expressions::create($data);
+        Expression::create($data);
         $this->progress();
     }
 

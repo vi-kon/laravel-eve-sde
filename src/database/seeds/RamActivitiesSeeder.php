@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Ram\Activities;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Ram\Activity;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class RamActivitiesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -28,7 +28,7 @@ class RamActivitiesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed ram_activities table');
+        $this->startProgress('<info>Inserting data:</info> ram_activities');
         $this->setProgressMax(9);
 
         $data = include(__DIR__ . '/data/ram_activities_table_data.php');
@@ -42,7 +42,7 @@ class RamActivitiesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Activities::create($data);
+        Activity::create($data);
         $this->progress();
     }
 

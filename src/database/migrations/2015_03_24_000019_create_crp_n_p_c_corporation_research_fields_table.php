@@ -21,7 +21,6 @@ class CreateCrpNPCCorporationResearchFieldsTable extends Migration {
 
 
             $table->primary(['skill_id', 'corporation_id'], 'prim');
-            $table->index('corporation_id', 'corporation_id');
 
 
             $table->foreign('skill_id', 'crp_n_p_c_corporation_research_fields_ibfk_1')

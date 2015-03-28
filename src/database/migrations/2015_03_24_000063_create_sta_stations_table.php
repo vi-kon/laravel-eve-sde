@@ -29,8 +29,7 @@ class CreateStaStationsTable extends Migration {
             $table->integer('office_rental_cost')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('operation_id')
-                ->unsigned()
+            $table->smallInteger('operation_id')
                 ->nullable()
                 ->default(null);
             $table->integer('station_type_id')
@@ -66,8 +65,7 @@ class CreateStaStationsTable extends Migration {
             $table->float('reprocessing_stations_take')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('reprocessing_hangar_flag')
-                ->unsigned()
+            $table->smallInteger('reprocessing_hangar_flag')
                 ->nullable()
                 ->default(null);
 

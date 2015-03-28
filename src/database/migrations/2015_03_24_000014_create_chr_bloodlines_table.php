@@ -16,13 +16,11 @@ class CreateChrBloodlinesTable extends Migration {
      */
     public function up() {
         Schema::create('chr_bloodlines', function (Blueprint $table) {
-            $table->tinyInteger('bloodline_id')
-                ->unsigned();
+            $table->smallInteger('bloodline_id');
             $table->string('bloodline_name', 100)
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('race_id')
-                ->unsigned()
+            $table->smallInteger('race_id')
                 ->nullable()
                 ->default(null);
             $table->string('description', 1000)
@@ -40,24 +38,19 @@ class CreateChrBloodlinesTable extends Migration {
             $table->integer('corporation_id')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('perception')
-                ->unsigned()
+            $table->smallInteger('perception')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('willpower')
-                ->unsigned()
+            $table->smallInteger('willpower')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('charisma')
-                ->unsigned()
+            $table->smallInteger('charisma')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('memory')
-                ->unsigned()
+            $table->smallInteger('memory')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('intelligence')
-                ->unsigned()
+            $table->smallInteger('intelligence')
                 ->nullable()
                 ->default(null);
             $table->integer('icon_id')

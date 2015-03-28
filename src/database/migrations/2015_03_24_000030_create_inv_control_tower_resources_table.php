@@ -18,8 +18,7 @@ class CreateInvControlTowerResourcesTable extends Migration {
         Schema::create('inv_control_tower_resources', function (Blueprint $table) {
             $table->integer('control_tower_type_id');
             $table->integer('resource_type_id');
-            $table->tinyInteger('purpose')
-                ->unsigned()
+            $table->smallInteger('purpose')
                 ->nullable()
                 ->default(null);
             $table->integer('quantity')
@@ -36,7 +35,6 @@ class CreateInvControlTowerResourcesTable extends Migration {
             $table->primary(['control_tower_type_id', 'resource_type_id'], 'prim');
             $table->index('purpose', 'purpose');
             $table->index('faction_id', 'faction_id');
-            $table->index('resource_type_id', 'resource_type_id');
 
 
             $table->foreign('control_tower_type_id', 'inv_control_tower_resources_ibfk_1')

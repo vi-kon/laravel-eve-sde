@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\UniqueNames;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\UniqueName;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvUniqueNamesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,7 +26,7 @@ class InvUniqueNamesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_unique_names table');
+        $this->startProgress('<info>Inserting data:</info> inv_unique_names');
         $this->setProgressMax(365405);
 
         $data = include(__DIR__ . '/data/inv_unique_names_table_data.php');
@@ -40,7 +40,7 @@ class InvUniqueNamesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        UniqueNames::create($data);
+        UniqueName::create($data);
         $this->progress();
     }
 

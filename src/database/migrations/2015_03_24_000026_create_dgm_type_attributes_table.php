@@ -27,7 +27,6 @@ class CreateDgmTypeAttributesTable extends Migration {
 
 
             $table->primary(['type_id', 'attribute_id'], 'prim');
-            $table->index('attribute_id', 'attribute_id');
 
 
             $table->foreign('type_id', 'dgm_type_attributes_ibfk_1')

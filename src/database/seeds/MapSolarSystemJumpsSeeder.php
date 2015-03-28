@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\SolarSystemJumps;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\SolarSystemJump;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapSolarSystemJumpsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -29,7 +29,7 @@ class MapSolarSystemJumpsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_solar_system_jumps table');
+        $this->startProgress('<info>Inserting data:</info> map_solar_system_jumps');
         $this->setProgressMax(13826);
 
         $data = include(__DIR__ . '/data/map_solar_system_jumps_table_data.php');
@@ -43,7 +43,7 @@ class MapSolarSystemJumpsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        SolarSystemJumps::create($data);
+        SolarSystemJump::create($data);
         $this->progress();
     }
 

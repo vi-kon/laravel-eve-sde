@@ -37,15 +37,15 @@ class Denormalize extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ortinyint() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Denormalize', 'item_id', 'ortinyint_id');
+    public function orbit() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Denormalize', 'item_id', 'orbit_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function denormalize() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'ortinyint_id', 'item_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'orbit_id', 'item_id');
     }
 
     /**

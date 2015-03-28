@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\MetaTypes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\MetaType;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvMetaTypesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,8 +26,8 @@ class InvMetaTypesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_meta_types table');
-        $this->setProgressMax(4170);
+        $this->startProgress('<info>Inserting data:</info> inv_meta_types');
+        $this->setProgressMax(4171);
 
         $data = include(__DIR__ . '/data/inv_meta_types_table_data.php');
         foreach ($data as $row) {
@@ -40,7 +40,7 @@ class InvMetaTypesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        MetaTypes::create($data);
+        MetaType::create($data);
         $this->progress();
     }
 

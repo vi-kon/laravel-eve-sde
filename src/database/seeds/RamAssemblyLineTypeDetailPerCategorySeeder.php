@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class RamAssemblyLineTypeDetailPerCategorySeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -28,7 +28,7 @@ class RamAssemblyLineTypeDetailPerCategorySeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed ram_assembly_line_type_detail_per_category table');
+        $this->startProgress('<info>Inserting data:</info> ram_assembly_line_type_detail_per_category');
         $this->setProgressMax(666);
 
         $data = include(__DIR__ . '/data/ram_assembly_line_type_detail_per_category_table_data.php');

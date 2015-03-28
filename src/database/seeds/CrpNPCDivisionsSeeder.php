@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Corporation\NPCDivisions;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Corporation\NPCDivision;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class CrpNPCDivisionsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class CrpNPCDivisionsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed crp_n_p_c_divisions table');
+        $this->startProgress('<info>Inserting data:</info> crp_n_p_c_divisions');
         $this->setProgressMax(29);
 
         $data = include(__DIR__ . '/data/crp_n_p_c_divisions_table_data.php');
@@ -41,7 +41,7 @@ class CrpNPCDivisionsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        NPCDivisions::create($data);
+        NPCDivision::create($data);
         $this->progress();
     }
 

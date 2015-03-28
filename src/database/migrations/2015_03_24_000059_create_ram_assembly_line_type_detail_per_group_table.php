@@ -16,8 +16,7 @@ class CreateRamAssemblyLineTypeDetailPerGroupTable extends Migration {
      */
     public function up() {
         Schema::create('ram_assembly_line_type_detail_per_group', function (Blueprint $table) {
-            $table->tinyInteger('assembly_line_type_id')
-                ->unsigned();
+            $table->smallInteger('assembly_line_type_id');
             $table->integer('group_id');
             $table->float('time_multiplier')
                 ->nullable()
@@ -31,7 +30,6 @@ class CreateRamAssemblyLineTypeDetailPerGroupTable extends Migration {
 
 
             $table->primary(['assembly_line_type_id', 'group_id'], 'prim');
-            $table->index('group_id', 'group_id');
 
 
             $table->foreign('assembly_line_type_id', 'ram_assembly_line_type_detail_per_group_ibfk_1')

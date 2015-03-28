@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Damage\TypeAttributes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Damage\TypeAttribute;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class DgmTypeAttributesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,8 +27,8 @@ class DgmTypeAttributesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed dgm_type_attributes table');
-        $this->setProgressMax(155937);
+        $this->startProgress('<info>Inserting data:</info> dgm_type_attributes');
+        $this->setProgressMax(156071);
 
         $data = include(__DIR__ . '/data/dgm_type_attributes_table_data.php');
         foreach ($data as $row) {
@@ -41,7 +41,7 @@ class DgmTypeAttributesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        TypeAttributes::create($data);
+        TypeAttribute::create($data);
         $this->progress();
     }
 

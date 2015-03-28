@@ -29,29 +29,25 @@ class CreateCrpNPCCorporationsTable extends Migration {
             $table->integer('investor_id1')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('investor_shares1')
-                ->unsigned()
+            $table->smallInteger('investor_shares1')
                 ->nullable()
                 ->default(null);
             $table->integer('investor_id2')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('investor_shares2')
-                ->unsigned()
+            $table->smallInteger('investor_shares2')
                 ->nullable()
                 ->default(null);
             $table->integer('investor_id3')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('investor_shares3')
-                ->unsigned()
+            $table->smallInteger('investor_shares3')
                 ->nullable()
                 ->default(null);
             $table->integer('investor_id4')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('investor_shares4')
-                ->unsigned()
+            $table->smallInteger('investor_shares4')
                 ->nullable()
                 ->default(null);
             $table->integer('friend_id')
@@ -72,20 +68,16 @@ class CreateCrpNPCCorporationsTable extends Migration {
             $table->boolean('scattered')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('fringe')
-                ->unsigned()
+            $table->smallInteger('fringe')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('corridor')
-                ->unsigned()
+            $table->smallInteger('corridor')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('hub')
-                ->unsigned()
+            $table->smallInteger('hub')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('border')
-                ->unsigned()
+            $table->smallInteger('border')
                 ->nullable()
                 ->default(null);
             $table->integer('faction_id')

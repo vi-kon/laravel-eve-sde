@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Inventory\ContrabandTypes;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Inventory\ContrabandType;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class InvContrabandTypesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -29,7 +29,7 @@ class InvContrabandTypesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed inv_contraband_types table');
+        $this->startProgress('<info>Inserting data:</info> inv_contraband_types');
         $this->setProgressMax(426);
 
         $data = include(__DIR__ . '/data/inv_contraband_types_table_data.php');
@@ -43,7 +43,7 @@ class InvContrabandTypesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        ContrabandTypes::create($data);
+        ContrabandType::create($data);
         $this->progress();
     }
 

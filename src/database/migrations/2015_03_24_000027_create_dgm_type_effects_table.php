@@ -24,7 +24,6 @@ class CreateDgmTypeEffectsTable extends Migration {
 
 
             $table->primary(['type_id', 'effect_id'], 'prim');
-            $table->index('effect_id', 'effect_id');
 
 
             $table->foreign('type_id', 'dgm_type_effects_ibfk_1')

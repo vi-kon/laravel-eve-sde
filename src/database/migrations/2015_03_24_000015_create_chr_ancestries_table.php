@@ -16,36 +16,29 @@ class CreateChrAncestriesTable extends Migration {
      */
     public function up() {
         Schema::create('chr_ancestries', function (Blueprint $table) {
-            $table->tinyInteger('ancestry_id')
-                ->unsigned();
+            $table->smallInteger('ancestry_id');
             $table->string('ancestry_name', 100)
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('bloodline_id')
-                ->unsigned()
+            $table->smallInteger('bloodline_id')
                 ->nullable()
                 ->default(null);
             $table->string('description', 1000)
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('perception')
-                ->unsigned()
+            $table->smallInteger('perception')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('willpower')
-                ->unsigned()
+            $table->smallInteger('willpower')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('charisma')
-                ->unsigned()
+            $table->smallInteger('charisma')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('memory')
-                ->unsigned()
+            $table->smallInteger('memory')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('intelligence')
-                ->unsigned()
+            $table->smallInteger('intelligence')
                 ->nullable()
                 ->default(null);
             $table->integer('icon_id')

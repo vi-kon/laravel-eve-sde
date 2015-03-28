@@ -2,10 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use ViKon\EveSDE\Models\Map\Denormalize;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapDenormalizeSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -16,7 +16,7 @@ class MapDenormalizeSeeder extends Seeder {
         3  => 'solar_system_id',
         4  => 'constellation_id',
         5  => 'region_id',
-        6  => 'ortinyint_id',
+        6  => 'orbit_id',
         7  => 'x',
         8  => 'y',
         9  => 'z',
@@ -24,7 +24,7 @@ class MapDenormalizeSeeder extends Seeder {
         11 => 'item_name',
         12 => 'security',
         13 => 'celestial_index',
-        14 => 'ortinyint_index',
+        14 => 'orbit_index',
     ];
 
     /**
@@ -38,7 +38,7 @@ class MapDenormalizeSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_denormalize table');
+        $this->startProgress('<info>Inserting data:</info> map_denormalize');
         $this->setProgressMax(502999);
 
         $data = include(__DIR__ . '/data/map_denormalize_table_data.php');

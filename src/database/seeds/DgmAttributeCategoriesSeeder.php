@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Damage\AttributeCategories;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Damage\AttributeCategory;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class DgmAttributeCategoriesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,7 +26,7 @@ class DgmAttributeCategoriesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed dgm_attribute_categories table');
+        $this->startProgress('<info>Inserting data:</info> dgm_attribute_categories');
         $this->setProgressMax(27);
 
         $data = include(__DIR__ . '/data/dgm_attribute_categories_table_data.php');
@@ -40,7 +40,7 @@ class DgmAttributeCategoriesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        AttributeCategories::create($data);
+        AttributeCategory::create($data);
         $this->progress();
     }
 

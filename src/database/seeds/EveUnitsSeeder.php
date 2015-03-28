@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\EveUnits;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\EveUnit;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class EveUnitsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -27,7 +27,7 @@ class EveUnitsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed eve_units table');
+        $this->startProgress('<info>Inserting data:</info> eve_units');
         $this->setProgressMax(57);
 
         $data = include(__DIR__ . '/data/eve_units_table_data.php');
@@ -41,7 +41,7 @@ class EveUnitsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        EveUnits::create($data);
+        EveUnit::create($data);
         $this->progress();
     }
 

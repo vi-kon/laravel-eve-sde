@@ -38,11 +38,10 @@ class CreateInvTypesTable extends Migration {
             $table->integer('portion_size')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('race_id')
-                ->unsigned()
+            $table->smallInteger('race_id')
                 ->nullable()
                 ->default(null);
-            $table->decimal('base_price', 19, 4)
+            $table->integer('base_price')
                 ->nullable()
                 ->default(null);
             $table->boolean('published')

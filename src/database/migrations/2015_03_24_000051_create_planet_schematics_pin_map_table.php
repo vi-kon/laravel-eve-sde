@@ -21,7 +21,6 @@ class CreatePlanetSchematicsPinMapTable extends Migration {
 
 
             $table->primary(['schematic_id', 'pin_type_id'], 'prim');
-            $table->index('pin_type_id', 'pin_type_id');
 
 
             $table->foreign('schematic_id', 'planet_schematics_pin_map_ibfk_1')

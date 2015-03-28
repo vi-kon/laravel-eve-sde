@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\War\CombatZones;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\War\CombatZone;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class WarCombatZonesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -28,7 +28,7 @@ class WarCombatZonesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed war_combat_zones table');
+        $this->startProgress('<info>Inserting data:</info> war_combat_zones');
         $this->setProgressMax(4);
 
         $data = include(__DIR__ . '/data/war_combat_zones_table_data.php');
@@ -42,7 +42,7 @@ class WarCombatZonesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        CombatZones::create($data);
+        CombatZone::create($data);
         $this->progress();
     }
 

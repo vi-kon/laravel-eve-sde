@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Agent\Agents;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Agent\Agent;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class AgtAgentsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -31,7 +31,7 @@ class AgtAgentsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed agt_agents table');
+        $this->startProgress('<info>Inserting data:</info> agt_agents');
         $this->setProgressMax(10975);
 
         $data = include(__DIR__ . '/data/agt_agents_table_data.php');
@@ -45,7 +45,7 @@ class AgtAgentsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Agents::create($data);
+        Agent::create($data);
         $this->progress();
     }
 

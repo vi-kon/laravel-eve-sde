@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Translation\TranslationLanguages;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Translation\TranslationLanguage;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class TrnTranslationLanguagesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,7 +26,7 @@ class TrnTranslationLanguagesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed trn_translation_languages table');
+        $this->startProgress('<info>Inserting data:</info> trn_translation_languages');
         $this->setProgressMax(8);
 
         $data = include(__DIR__ . '/data/trn_translation_languages_table_data.php');
@@ -40,7 +40,7 @@ class TrnTranslationLanguagesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        TranslationLanguages::create($data);
+        TranslationLanguage::create($data);
         $this->progress();
     }
 

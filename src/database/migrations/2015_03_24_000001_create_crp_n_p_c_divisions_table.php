@@ -16,8 +16,7 @@ class CreateCrpNPCDivisionsTable extends Migration {
      */
     public function up() {
         Schema::create('crp_n_p_c_divisions', function (Blueprint $table) {
-            $table->tinyInteger('division_id')
-                ->unsigned();
+            $table->smallInteger('division_id');
             $table->string('division_name', 100)
                 ->nullable()
                 ->default(null);

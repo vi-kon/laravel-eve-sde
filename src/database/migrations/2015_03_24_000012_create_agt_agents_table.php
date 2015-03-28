@@ -17,8 +17,7 @@ class CreateAgtAgentsTable extends Migration {
     public function up() {
         Schema::create('agt_agents', function (Blueprint $table) {
             $table->integer('agent_id');
-            $table->tinyInteger('division_id')
-                ->unsigned()
+            $table->smallInteger('division_id')
                 ->nullable()
                 ->default(null);
             $table->integer('corporation_id')
@@ -27,8 +26,7 @@ class CreateAgtAgentsTable extends Migration {
             $table->integer('location_id')
                 ->nullable()
                 ->default(null);
-            $table->tinyInteger('level')
-                ->unsigned()
+            $table->smallInteger('level')
                 ->nullable()
                 ->default(null);
             $table->smallInteger('quality')

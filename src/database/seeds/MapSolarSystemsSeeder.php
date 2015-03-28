@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Map\SolarSystems;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Map\SolarSystem;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class MapSolarSystemsSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -49,7 +49,7 @@ class MapSolarSystemsSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed map_solar_systems table');
+        $this->startProgress('<info>Inserting data:</info> map_solar_systems');
         $this->setProgressMax(8030);
 
         $data = include(__DIR__ . '/data/map_solar_systems_table_data.php');
@@ -63,7 +63,7 @@ class MapSolarSystemsSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        SolarSystems::create($data);
+        SolarSystem::create($data);
         $this->progress();
     }
 

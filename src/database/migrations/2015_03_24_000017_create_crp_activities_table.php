@@ -16,8 +16,7 @@ class CreateCrpActivitiesTable extends Migration {
      */
     public function up() {
         Schema::create('crp_activities', function (Blueprint $table) {
-            $table->tinyInteger('activity_id')
-                ->unsigned();
+            $table->smallInteger('activity_id');
             $table->string('activity_name', 100)
                 ->nullable()
                 ->default(null);

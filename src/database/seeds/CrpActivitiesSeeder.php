@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ViKon\EveSDE\Models\Corporation\Activities;
-use ViKon\Utilities\ConsoleProgress;
+use ViKon\EveSDE\Models\Corporation\Activity;
+use ViKon\Utilities\ConsoleProgressbar;
 
 class CrpActivitiesSeeder extends Seeder {
-    use ConsoleProgress;
+    use ConsoleProgressbar;
 
     protected $output;
 
@@ -26,7 +26,7 @@ class CrpActivitiesSeeder extends Seeder {
         $this->output = $this->command->getOutput();
 
         $this->initProgressbar();
-        $this->startProgress('Seed crp_activities table');
+        $this->startProgress('<info>Inserting data:</info> crp_activities');
         $this->setProgressMax(20);
 
         $data = include(__DIR__ . '/data/crp_activities_table_data.php');
@@ -40,7 +40,7 @@ class CrpActivitiesSeeder extends Seeder {
         foreach ($this->structure as $i => $key) {
             $data[$key] = $values[$i];
         }
-        Activities::create($data);
+        Activity::create($data);
         $this->progress();
     }
 

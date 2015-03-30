@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Flag
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer $flag_id
+ * @property string  $flag_name
+ * @property string  $flag_text
+ * @property integer $order_id
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Flag whereFlagId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Flag whereFlagName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Flag whereFlagText($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Flag whereOrderId($value)
+ */
 class Flag extends Model {
     /**
      *

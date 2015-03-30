@@ -4,6 +4,19 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class UniqueName
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                   $item_id
+ * @property string                                    $item_name
+ * @property integer                                   $group_id
+ * @property-read \ViKon\EveSDE\Models\Inventory\Group $group
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\UniqueName whereItemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\UniqueName whereItemName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\UniqueName whereGroupId($value)
+ */
 class UniqueName extends Model {
     /**
      *

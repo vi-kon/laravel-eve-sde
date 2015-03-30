@@ -4,6 +4,25 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Category
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                                                              $category_id
+ * @property string                                                                               $category_name
+ * @property string                                                                               $description
+ * @property integer                                                                              $icon_id
+ * @property boolean                                                                              $published
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Group[] $groups
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
+ *                $assemblyLineTypeDetailPerCategory
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereCategoryId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereCategoryName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereIconId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category wherePublished($value)
+ */
 class Category extends Model {
     /**
      *

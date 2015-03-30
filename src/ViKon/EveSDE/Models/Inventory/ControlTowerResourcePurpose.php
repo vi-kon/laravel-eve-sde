@@ -4,6 +4,22 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class ControlTowerResourcePurpose
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer
+ *           $purpose
+ * @property string
+ *           $purpose_text
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\ControlTowerResource[]
+ *                $controlTowerResources
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose
+ *         wherePurpose($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose
+ *         wherePurposeText($value)
+ */
 class ControlTowerResourcePurpose extends Model {
     /**
      *

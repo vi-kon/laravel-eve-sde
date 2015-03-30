@@ -4,6 +4,63 @@ namespace ViKon\EveSDE\Models\Station;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Operation
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Station
+ * @property integer                                                                                  $activity_id
+ * @property integer                                                                                  $operation_id
+ * @property string                                                                                   $operation_name
+ * @property string                                                                                   $description
+ * @property integer                                                                                  $fringe
+ * @property integer                                                                                  $corridor
+ * @property integer                                                                                  $hub
+ * @property integer                                                                                  $border
+ * @property integer                                                                                  $ratio
+ * @property integer
+ *           $caldari_station_type_id
+ * @property integer
+ *           $minmatar_station_type_id
+ * @property integer
+ *           $amarr_station_type_id
+ * @property integer
+ *           $gallente_station_type_id
+ * @property integer
+ *           $jove_station_type_id
+ * @property-read \ViKon\EveSDE\Models\Station\OperationService
+ *                $operationServices
+ * @property-read \ViKon\EveSDE\Models\Corporation\Activity                                           $activity
+ * @property-read \ViKon\EveSDE\Models\Station\StationType
+ *                $caldariStationType
+ * @property-read \ViKon\EveSDE\Models\Station\StationType
+ *                $minmatarStationType
+ * @property-read \ViKon\EveSDE\Models\Station\StationType                                            $amarrStationType
+ * @property-read \ViKon\EveSDE\Models\Station\StationType
+ *                $gallenteStationType
+ * @property-read \ViKon\EveSDE\Models\Station\StationType                                            $joveStationType
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\StationType[] $stationTypes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]     $stations
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereActivityId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereOperationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereOperationName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereFringe($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereCorridor($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereHub($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereBorder($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereRatio($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation
+ *         whereCaldariStationTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation
+ *         whereMinmatarStationTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation
+ *         whereAmarrStationTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation
+ *         whereGallenteStationTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation
+ *         whereJoveStationTypeId($value)
+ */
 class Operation extends Model {
     /**
      *

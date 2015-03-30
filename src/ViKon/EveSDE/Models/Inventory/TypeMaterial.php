@@ -4,6 +4,21 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class TypeMaterial
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                  $type_id
+ * @property integer                                  $material_type_id
+ * @property integer                                  $quantity
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type $type
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type $materialType
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\TypeMaterial whereTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\TypeMaterial
+ *         whereMaterialTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\TypeMaterial whereQuantity($value)
+ */
 class TypeMaterial extends Model {
     /**
      *

@@ -4,6 +4,41 @@ namespace ViKon\EveSDE\Models\Ram;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class AssemblyLineType
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Ram
+ * @property integer                                                         $assembly_line_type_id
+ * @property string                                                          $assembly_line_type_name
+ * @property string                                                          $description
+ * @property float                                                           $base_time_multiplier
+ * @property float                                                           $base_material_multiplier
+ * @property float                                                           $base_cost_multiplier
+ * @property float                                                           $volume
+ * @property integer                                                         $activity_id
+ * @property float                                                           $min_cost_per_hour
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineStation               $assemblyLineStations
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory $assemblyLineTypeDetailPerCategory
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerGroup    $assemblyLineTypeDetailPerGroup
+ * @property-read \ViKon\EveSDE\Models\Ram\Activity                          $activity
+ * @property-read \ViKon\EveSDE\Models\Ram\InstallationTypeContent           $installationTypeContents
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType
+ *         whereAssemblyLineTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType
+ *         whereAssemblyLineTypeName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType
+ *         whereBaseTimeMultiplier($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType
+ *         whereBaseMaterialMultiplier($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType
+ *         whereBaseCostMultiplier($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType whereVolume($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType whereActivityId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineType
+ *         whereMinCostPerHour($value)
+ */
 class AssemblyLineType extends Model {
     /**
      *

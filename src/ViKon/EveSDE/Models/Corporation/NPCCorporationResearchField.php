@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\Corporation;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class NPCCorporationResearchField
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Corporation
+ * @property integer                                              $skill_id
+ * @property integer                                              $corporation_id
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type             $skill
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation $corporation
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField
+ *         whereSkillId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField
+ *         whereCorporationId($value)
+ */
 class NPCCorporationResearchField extends Model {
     /**
      *

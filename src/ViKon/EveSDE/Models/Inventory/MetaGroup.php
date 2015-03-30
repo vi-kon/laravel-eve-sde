@@ -4,6 +4,21 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class MetaGroup
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                                                                 $meta_group_id
+ * @property string                                                                                  $meta_group_name
+ * @property string                                                                                  $description
+ * @property integer                                                                                 $icon_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\MetaType[] $metaTypes
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaGroup whereMetaGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaGroup whereMetaGroupName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaGroup whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaGroup whereIconId($value)
+ */
 class MetaGroup extends Model {
     /**
      *

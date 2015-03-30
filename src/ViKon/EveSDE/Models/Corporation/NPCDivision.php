@@ -4,6 +4,26 @@ namespace ViKon\EveSDE\Models\Corporation;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class NPCDivision
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Corporation
+ * @property integer                                                                          $division_id
+ * @property string                                                                           $division_name
+ * @property string                                                                           $description
+ * @property string                                                                           $leader_type
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[] $agents
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationDivision                     $nPCCorporationDivisions
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCDivision
+ *         whereDivisionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCDivision
+ *         whereDivisionName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCDivision
+ *         whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCDivision
+ *         whereLeaderType($value)
+ */
 class NPCDivision extends Model {
     /**
      *

@@ -4,6 +4,19 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class LocationWormholeClass
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer                                   $location_id
+ * @property integer                                   $wormhole_class_id
+ * @property-read \ViKon\EveSDE\Models\Map\Denormalize $location
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\LocationWormholeClass
+ *         whereLocationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\LocationWormholeClass
+ *         whereWormholeClassId($value)
+ */
 class LocationWormholeClass extends Model {
     /**
      *

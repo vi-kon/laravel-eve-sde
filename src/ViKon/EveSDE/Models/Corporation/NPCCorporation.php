@@ -4,6 +4,122 @@ namespace ViKon\EveSDE\Models\Corporation;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class NPCCorporation
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Corporation
+ * @property integer
+ *           $corporation_id
+ * @property string                                                                                       $size
+ * @property string                                                                                       $extent
+ * @property integer
+ *           $solar_system_id
+ * @property integer                                                                                      $investor_id1
+ * @property integer
+ *           $investor_shares1
+ * @property integer                                                                                      $investor_id2
+ * @property integer
+ *           $investor_shares2
+ * @property integer                                                                                      $investor_id3
+ * @property integer
+ *           $investor_shares3
+ * @property integer                                                                                      $investor_id4
+ * @property integer
+ *           $investor_shares4
+ * @property integer                                                                                      $friend_id
+ * @property integer                                                                                      $enemy_id
+ * @property integer
+ *           $public_shares
+ * @property integer
+ *           $initial_price
+ * @property float                                                                                        $min_security
+ * @property boolean                                                                                      $scattered
+ * @property integer                                                                                      $fringe
+ * @property integer                                                                                      $corridor
+ * @property integer                                                                                      $hub
+ * @property integer                                                                                      $border
+ * @property integer                                                                                      $faction_id
+ * @property float                                                                                        $size_factor
+ * @property integer
+ *           $station_count
+ * @property integer
+ *           $station_system_count
+ * @property string                                                                                       $description
+ * @property integer                                                                                      $icon_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[]             $agents
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Character\Bloodline[]     $bloodlines
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationDivision
+ *                $nPCCorporationDivisions
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField
+ *                $nPCCorporationResearchFields
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationTrade
+ *                $nPCCorporationTrades
+ * @property-read \ViKon\EveSDE\Models\Map\SolarSystem                                                    $solarSystem
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor1
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor2
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor3
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor4
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $friend
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $enemy
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Ram\AssemblyLineStation[]
+ *                $assemblyLineStations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]         $stations
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereCorporationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation whereSize($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereExtent($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereSolarSystemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorId1($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorShares1($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorId2($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorShares2($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorId3($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorShares3($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorId4($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInvestorShares4($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereFriendId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereEnemyId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         wherePublicShares($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereInitialPrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereMinSecurity($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereScattered($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereFringe($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereCorridor($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation whereHub($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereBorder($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereFactionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereSizeFactor($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereStationCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereStationSystemCount($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *         whereIconId($value)
+ */
 class NPCCorporation extends Model {
     /**
      *

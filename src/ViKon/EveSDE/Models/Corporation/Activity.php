@@ -4,6 +4,19 @@ namespace ViKon\EveSDE\Models\Corporation;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Activity
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Corporation
+ * @property integer                                                                                $activity_id
+ * @property string                                                                                 $activity_name
+ * @property string                                                                                 $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Operation[] $operations
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\Activity whereActivityId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\Activity whereActivityName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\Activity whereDescription($value)
+ */
 class Activity extends Model {
     /**
      *

@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\Station;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class OperationService
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Station
+ * @property integer                                     $operation_id
+ * @property integer                                     $service_id
+ * @property-read \ViKon\EveSDE\Models\Station\Operation $operation
+ * @property-read \ViKon\EveSDE\Models\Station\Service   $service
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\OperationService
+ *         whereOperationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\OperationService
+ *         whereServiceId($value)
+ */
 class OperationService extends Model {
     /**
      *

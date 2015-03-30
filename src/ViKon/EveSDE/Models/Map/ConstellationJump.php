@@ -4,6 +4,23 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class ConstellationJump
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer $from_region_id
+ * @property integer $from_constellation_id
+ * @property integer $to_constellation_id
+ * @property integer $to_region_id
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\ConstellationJump
+ *         whereFromRegionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\ConstellationJump
+ *         whereFromConstellationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\ConstellationJump
+ *         whereToConstellationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\ConstellationJump whereToRegionId($value)
+ */
 class ConstellationJump extends Model {
     /**
      *

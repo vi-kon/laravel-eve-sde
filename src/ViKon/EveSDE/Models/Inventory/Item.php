@@ -4,6 +4,26 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Item
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                                                             $item_id
+ * @property integer                                                                             $type_id
+ * @property integer                                                                             $owner_id
+ * @property integer                                                                             $location_id
+ * @property integer                                                                             $flag_id
+ * @property integer                                                                             $quantity
+ * @property-read \ViKon\EveSDE\Models\Inventory\Item                                            $location
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Item[] $items
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Item whereItemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Item whereTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Item whereOwnerId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Item whereLocationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Item whereFlagId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Item whereQuantity($value)
+ */
 class Item extends Model {
     /**
      *

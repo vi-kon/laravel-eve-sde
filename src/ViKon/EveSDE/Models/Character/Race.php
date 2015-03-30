@@ -4,6 +4,24 @@ namespace ViKon\EveSDE\Models\Character;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Race
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Character
+ * @property integer                                                                                  $race_id
+ * @property string                                                                                   $race_name
+ * @property string                                                                                   $description
+ * @property integer                                                                                  $icon_id
+ * @property string                                                                                   $short_description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Character\Bloodline[] $bloodlines
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Type[]      $types
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Character\Race whereRaceId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Character\Race whereRaceName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Character\Race whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Character\Race whereIconId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Character\Race whereShortDescription($value)
+ */
 class Race extends Model {
     /**
      *

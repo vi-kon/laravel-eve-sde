@@ -4,6 +4,18 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class RegionJump
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer                              $from_region_id
+ * @property integer                              $to_region_id
+ * @property-read \ViKon\EveSDE\Models\Map\Region $fromRegion
+ * @property-read \ViKon\EveSDE\Models\Map\Region $toRegion
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\RegionJump whereFromRegionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\RegionJump whereToRegionId($value)
+ */
 class RegionJump extends Model {
     /**
      *

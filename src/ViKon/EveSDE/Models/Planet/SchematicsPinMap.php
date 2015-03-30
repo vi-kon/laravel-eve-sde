@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\Planet;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class SchematicsPinMap
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Planet
+ * @property integer                                    $schematic_id
+ * @property integer                                    $pin_type_id
+ * @property-read \ViKon\EveSDE\Models\Planet\Schematic $schematic
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type   $pinType
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Planet\SchematicsPinMap
+ *         whereSchematicId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Planet\SchematicsPinMap
+ *         wherePinTypeId($value)
+ */
 class SchematicsPinMap extends Model {
     /**
      *

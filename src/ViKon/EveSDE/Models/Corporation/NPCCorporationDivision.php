@@ -4,6 +4,23 @@ namespace ViKon\EveSDE\Models\Corporation;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class NPCCorporationDivision
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Corporation
+ * @property integer                                              $corporation_id
+ * @property integer                                              $division_id
+ * @property integer                                              $size
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation $corporation
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCDivision    $division
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporationDivision
+ *         whereCorporationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporationDivision
+ *         whereDivisionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporationDivision
+ *         whereSize($value)
+ */
 class NPCCorporationDivision extends Model {
     /**
      *

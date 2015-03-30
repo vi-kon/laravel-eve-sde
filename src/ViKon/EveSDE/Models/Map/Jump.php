@@ -4,6 +4,18 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Jump
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer                                   $stargate_id
+ * @property integer                                   $destination_id
+ * @property-read \ViKon\EveSDE\Models\Map\Denormalize $stargate
+ * @property-read \ViKon\EveSDE\Models\Map\Denormalize $destination
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Jump whereStargateId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Jump whereDestinationId($value)
+ */
 class Jump extends Model {
     /**
      *

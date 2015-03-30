@@ -4,6 +4,35 @@ namespace ViKon\EveSDE\Models\Ram;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class AssemblyLineStation
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Ram
+ * @property integer                                              $station_id
+ * @property integer                                              $assembly_line_type_id
+ * @property integer                                              $quantity
+ * @property integer                                              $station_type_id
+ * @property integer                                              $owner_id
+ * @property integer                                              $solar_system_id
+ * @property integer                                              $region_id
+ * @property-read \ViKon\EveSDE\Models\Map\Region                 $region
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineType       $assemblyLineType
+ * @property-read \ViKon\EveSDE\Models\Station\StationType        $stationType
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation $owner
+ * @property-read \ViKon\EveSDE\Models\Map\SolarSystem            $solarSystem
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation
+ *         whereStationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation
+ *         whereAssemblyLineTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation whereQuantity($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation
+ *         whereStationTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation whereOwnerId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation
+ *         whereSolarSystemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineStation whereRegionId($value)
+ */
 class AssemblyLineStation extends Model {
     /**
      *

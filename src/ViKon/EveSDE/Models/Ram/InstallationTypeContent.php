@@ -4,6 +4,22 @@ namespace ViKon\EveSDE\Models\Ram;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class InstallationTypeContent
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Ram
+ * @property integer                                        $installation_type_id
+ * @property integer                                        $assembly_line_type_id
+ * @property integer                                        $quantity
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineType $assemblyLineType
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\InstallationTypeContent
+ *         whereInstallationTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\InstallationTypeContent
+ *         whereAssemblyLineTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\InstallationTypeContent
+ *         whereQuantity($value)
+ */
 class InstallationTypeContent extends Model {
     /**
      *

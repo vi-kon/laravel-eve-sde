@@ -4,6 +4,33 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class ControlTowerResource
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                                    $control_tower_type_id
+ * @property integer                                                    $resource_type_id
+ * @property \ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose $purpose
+ * @property integer                                                    $quantity
+ * @property float                                                      $min_security_level
+ * @property integer                                                    $faction_id
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type                   $controlTowerType
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type                   $resourceType
+ * @property-read \ViKon\EveSDE\Models\Character\Faction                $faction
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResource
+ *         whereControlTowerTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResource
+ *         whereResourceTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResource
+ *         wherePurpose($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResource
+ *         whereQuantity($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResource
+ *         whereMinSecurityLevel($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\ControlTowerResource
+ *         whereFactionId($value)
+ */
 class ControlTowerResource extends Model {
     /**
      *

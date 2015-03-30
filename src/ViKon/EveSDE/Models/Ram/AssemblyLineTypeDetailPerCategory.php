@@ -4,6 +4,29 @@ namespace ViKon\EveSDE\Models\Ram;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class AssemblyLineTypeDetailPerCategory
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Ram
+ * @property integer                                        $assembly_line_type_id
+ * @property integer                                        $category_id
+ * @property float                                          $time_multiplier
+ * @property float                                          $material_multiplier
+ * @property float                                          $cost_multiplier
+ * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineType $assemblyLineType
+ * @property-read \ViKon\EveSDE\Models\Inventory\Category   $category
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
+ *         whereAssemblyLineTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
+ *         whereCategoryId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
+ *         whereTimeMultiplier($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
+ *         whereMaterialMultiplier($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
+ *         whereCostMultiplier($value)
+ */
 class AssemblyLineTypeDetailPerCategory extends Model {
     /**
      *

@@ -4,6 +4,21 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class MetaType
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                       $type_id
+ * @property integer                                       $parent_type_id
+ * @property integer                                       $meta_group_id
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type      $type
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type      $parentType
+ * @property-read \ViKon\EveSDE\Models\Inventory\MetaGroup $metaGroup
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaType whereTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaType whereParentTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\MetaType whereMetaGroupId($value)
+ */
 class MetaType extends Model {
     /**
      *

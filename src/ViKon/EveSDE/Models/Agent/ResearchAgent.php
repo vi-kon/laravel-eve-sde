@@ -4,6 +4,18 @@ namespace ViKon\EveSDE\Models\Agent;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class ResearchAgent
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Agent
+ * @property integer                                  $agent_id
+ * @property integer                                  $type_id
+ * @property-read \ViKon\EveSDE\Models\Agent\Agent    $agent
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type $type
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Agent\ResearchAgent whereAgentId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Agent\ResearchAgent whereTypeId($value)
+ */
 class ResearchAgent extends Model {
     /**
      *

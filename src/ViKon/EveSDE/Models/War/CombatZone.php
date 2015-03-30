@@ -4,6 +4,28 @@ namespace ViKon\EveSDE\Models\War;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class CombatZone
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\War
+ * @property integer                                                                                   $combat_zone_id
+ * @property string
+ *           $combat_zone_name
+ * @property integer                                                                                   $faction_id
+ * @property integer
+ *           $center_system_id
+ * @property string                                                                                    $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\War\CombatZoneSystem[]
+ *                $combatZoneSystems
+ * @property-read \ViKon\EveSDE\Models\Character\Faction                                               $faction
+ * @property-read \ViKon\EveSDE\Models\Map\SolarSystem                                                 $centerSystem
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZone whereCombatZoneId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZone whereCombatZoneName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZone whereFactionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZone whereCenterSystemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZone whereDescription($value)
+ */
 class CombatZone extends Model {
     /**
      *

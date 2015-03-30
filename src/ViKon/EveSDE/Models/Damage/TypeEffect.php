@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\Damage;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class TypeEffect
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Damage
+ * @property integer                                  $type_id
+ * @property integer                                  $effect_id
+ * @property boolean                                  $is_default
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type $type
+ * @property-read \ViKon\EveSDE\Models\Damage\Effect  $effect
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeEffect whereTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeEffect whereEffectId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeEffect whereIsDefault($value)
+ */
 class TypeEffect extends Model {
     /**
      *

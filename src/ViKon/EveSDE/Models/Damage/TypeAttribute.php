@@ -4,6 +4,22 @@ namespace ViKon\EveSDE\Models\Damage;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class TypeAttribute
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Damage
+ * @property integer                                        $type_id
+ * @property integer                                        $attribute_id
+ * @property integer                                        $value_int
+ * @property float                                          $value_float
+ * @property-read \ViKon\EveSDE\Models\Inventory\Type       $type
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $attribute
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeAttribute whereTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeAttribute whereAttributeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeAttribute whereValueInt($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\TypeAttribute whereValueFloat($value)
+ */
 class TypeAttribute extends Model {
     /**
      *

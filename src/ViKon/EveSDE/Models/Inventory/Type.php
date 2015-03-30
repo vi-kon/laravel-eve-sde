@@ -4,6 +4,58 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Type
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer                                                                                  $type_id
+ * @property integer                                                                                  $group_id
+ * @property string                                                                                   $type_name
+ * @property string                                                                                   $description
+ * @property float                                                                                    $mass
+ * @property float                                                                                    $volume
+ * @property float                                                                                    $capacity
+ * @property integer                                                                                  $portion_size
+ * @property integer                                                                                  $race_id
+ * @property integer                                                                                  $base_price
+ * @property boolean                                                                                  $published
+ * @property integer                                                                                  $market_group_id
+ * @property float
+ *           $chance_of_duplicating
+ * @property-read \ViKon\EveSDE\Models\Agent\ResearchAgent                                            $researchAgents
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Character\Bloodline[] $bloodlines
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField
+ *                $nPCCorporationResearchFields
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationTrade
+ *                $nPCCorporationTrades
+ * @property-read \ViKon\EveSDE\Models\Damage\TypeAttribute                                           $typeAttributes
+ * @property-read \ViKon\EveSDE\Models\Damage\TypeEffect                                              $typeEffects
+ * @property-read \ViKon\EveSDE\Models\Inventory\ContrabandType                                       $contrabandTypes
+ * @property-read \ViKon\EveSDE\Models\Inventory\Group                                                $group
+ * @property-read \ViKon\EveSDE\Models\Character\Race                                                 $race
+ * @property-read \ViKon\EveSDE\Models\Inventory\MarketGroup                                          $marketGroup
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]     $denormalize
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystem[]     $solarSystems
+ * @property-read \ViKon\EveSDE\Models\Planet\SchematicsPinMap                                        $schematicsPinMap
+ * @property-read \ViKon\EveSDE\Models\Planet\SchematicsTypeMap
+ *                $schematicsTypeMap
+ * @property-read \ViKon\EveSDE\Models\Station\StationType                                            $stationTypes
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereTypeId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereTypeName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereMass($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereVolume($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereCapacity($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type wherePortionSize($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereRaceId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereBasePrice($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type wherePublished($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type whereMarketGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Type
+ *         whereChanceOfDuplicating($value)
+ */
 class Type extends Model {
     /**
      *

@@ -4,6 +4,17 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class LocationScene
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer                                   $location_id
+ * @property integer                                   $graphic_id
+ * @property-read \ViKon\EveSDE\Models\Map\Denormalize $location
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\LocationScene whereLocationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\LocationScene whereGraphicId($value)
+ */
 class LocationScene extends Model {
     /**
      *

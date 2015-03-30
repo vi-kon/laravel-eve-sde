@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\Planet;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Schematic
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Planet
+ * @property integer                                            $schematic_id
+ * @property string                                             $schematic_name
+ * @property integer                                            $cycle_time
+ * @property-read \ViKon\EveSDE\Models\Planet\SchematicsPinMap  $schematicsPinMap
+ * @property-read \ViKon\EveSDE\Models\Planet\SchematicsTypeMap $schematicsTypeMap
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Planet\Schematic whereSchematicId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Planet\Schematic whereSchematicName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Planet\Schematic whereCycleTime($value)
+ */
 class Schematic extends Model {
     /**
      *

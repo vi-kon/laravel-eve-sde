@@ -4,6 +4,26 @@ namespace ViKon\EveSDE\Models\Inventory;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Position
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Inventory
+ * @property integer $item_id
+ * @property float   $x
+ * @property float   $y
+ * @property float   $z
+ * @property float   $yaw
+ * @property float   $pitch
+ * @property float   $roll
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position whereItemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position whereX($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position whereY($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position whereZ($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position whereYaw($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position wherePitch($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Position whereRoll($value)
+ */
 class Position extends Model {
     /**
      *

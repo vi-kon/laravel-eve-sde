@@ -4,6 +4,54 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Region
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer                                                                                      $region_id
+ * @property string                                                                                       $region_name
+ * @property float                                                                                        $x
+ * @property float                                                                                        $y
+ * @property float                                                                                        $z
+ * @property float                                                                                        $x_min
+ * @property float                                                                                        $x_max
+ * @property float                                                                                        $y_min
+ * @property float                                                                                        $y_max
+ * @property float                                                                                        $z_min
+ * @property float                                                                                        $z_max
+ * @property integer                                                                                      $faction_id
+ * @property float                                                                                        $radius
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Constellation[]
+ *                $constellations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]         $denormalize
+ * @property-read \ViKon\EveSDE\Models\Map\RegionJump
+ *                $fromRegionJumps
+ * @property-read \ViKon\EveSDE\Models\Map\RegionJump
+ *                $toRegionJumps
+ * @property-read \ViKon\EveSDE\Models\Character\Faction                                                  $faction
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
+ *                $fromSolarSystemJumps
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
+ *                $toSolarSystemJumps
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystem[]         $solarSystems
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Ram\AssemblyLineStation[]
+ *                $assemblyLineStations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]         $stations
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereRegionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereRegionName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereX($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereY($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereZ($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereXMin($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereXMax($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereYMin($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereYMax($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereZMin($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereZMax($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereFactionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Region whereRadius($value)
+ */
 class Region extends Model {
     /**
      *

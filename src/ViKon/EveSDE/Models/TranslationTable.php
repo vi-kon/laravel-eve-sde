@@ -4,6 +4,22 @@ namespace ViKon\EveSDE\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class TranslationTable
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models
+ * @property string  $source_table
+ * @property string  $destination_table
+ * @property string  $translated_key
+ * @property integer $tc_group_id
+ * @property integer $tc_id
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\TranslationTable whereSourceTable($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\TranslationTable whereDestinationTable($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\TranslationTable whereTranslatedKey($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\TranslationTable whereTcGroupId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\TranslationTable whereTcId($value)
+ */
 class TranslationTable extends Model {
     /**
      *

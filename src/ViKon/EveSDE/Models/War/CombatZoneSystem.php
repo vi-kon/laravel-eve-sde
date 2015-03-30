@@ -4,6 +4,20 @@ namespace ViKon\EveSDE\Models\War;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class CombatZoneSystem
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\War
+ * @property integer                                   $solar_system_id
+ * @property integer                                   $combat_zone_id
+ * @property-read \ViKon\EveSDE\Models\Map\SolarSystem $solarSystem
+ * @property-read \ViKon\EveSDE\Models\War\CombatZone  $combatZone
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZoneSystem
+ *         whereSolarSystemId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\War\CombatZoneSystem
+ *         whereCombatZoneId($value)
+ */
 class CombatZoneSystem extends Model {
     /**
      *

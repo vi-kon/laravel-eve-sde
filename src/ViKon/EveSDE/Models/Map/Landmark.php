@@ -4,6 +4,29 @@ namespace ViKon\EveSDE\Models\Map;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Landmark
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Map
+ * @property integer                                   $landmark_id
+ * @property string                                    $landmark_name
+ * @property string                                    $description
+ * @property integer                                   $location_id
+ * @property float                                     $x
+ * @property float                                     $y
+ * @property float                                     $z
+ * @property integer                                   $icon_id
+ * @property-read \ViKon\EveSDE\Models\Map\SolarSystem $location
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereLandmarkId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereLandmarkName($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereLocationId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereX($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereY($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereZ($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Landmark whereIconId($value)
+ */
 class Landmark extends Model {
     /**
      *

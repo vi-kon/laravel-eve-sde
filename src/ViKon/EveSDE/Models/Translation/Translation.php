@@ -4,6 +4,22 @@ namespace ViKon\EveSDE\Models\Translation;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Translation
+ *
+ * @author  Kovács Vince <vincekovacs@hotmail.com>
+ * @package ViKon\EveSDE\Models\Translation
+ * @property integer                                                 $tc_id
+ * @property integer                                                 $key_id
+ * @property string                                                  $language_id
+ * @property string                                                  $text
+ * @property-read \ViKon\EveSDE\Models\Translation\TranslationColumn $tc
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Translation\Translation whereTcId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Translation\Translation whereKeyId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Translation\Translation
+ *         whereLanguageId($value)
+ * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Translation\Translation whereText($value)
+ */
 class Translation extends Model {
     /**
      *

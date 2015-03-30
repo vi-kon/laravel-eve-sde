@@ -31,6 +31,6 @@ class Ancestry extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function bloodline() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Bloodlines', 'bloodline_id', 'bloodline_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Bloodline', 'bloodline_id', 'bloodline_id');
     }
 }

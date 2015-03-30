@@ -30,14 +30,14 @@ class ContrabandType extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
+    public function faction() {
+        return $this->hasOne('ViKon\EveSDE\Models\Character\Faction', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function faction() {
-        return $this->hasOne('ViKon\EveSDE\Models\Character\Factions', 'faction_id', 'faction_id');
+    public function type() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

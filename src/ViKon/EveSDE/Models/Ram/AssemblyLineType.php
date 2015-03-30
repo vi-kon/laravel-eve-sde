@@ -31,7 +31,7 @@ class AssemblyLineType extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function assemblyLineStations() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineStations', 'assembly_line_type_id', 'assembly_line_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineStation', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 
     /**
@@ -52,13 +52,13 @@ class AssemblyLineType extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function activity() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Ram\Activities', 'activity_id', 'activity_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Ram\Activity', 'activity_id', 'activity_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function installationTypeContents() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Ram\InstallationTypeContents', 'assembly_line_type_id', 'assembly_line_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Ram\InstallationTypeContent', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 }

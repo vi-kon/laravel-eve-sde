@@ -30,14 +30,14 @@ class RegionJump extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function toRegion() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\Regions', 'region_id', 'to_region_id');
+    public function fromRegion() {
+        return $this->hasOne('ViKon\EveSDE\Models\Map\Region', 'region_id', 'from_region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function fromRegion() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\Regions', 'region_id', 'from_region_id');
+    public function toRegion() {
+        return $this->hasOne('ViKon\EveSDE\Models\Map\Region', 'region_id', 'to_region_id');
     }
 }

@@ -30,14 +30,14 @@ class SchematicsPinMap extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function pinType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'pin_type_id');
+    public function schematic() {
+        return $this->hasOne('ViKon\EveSDE\Models\Planet\Schematic', 'schematic_id', 'schematic_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function schematic() {
-        return $this->hasOne('ViKon\EveSDE\Models\Planet\Schematics', 'schematic_id', 'schematic_id');
+    public function pinType() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'pin_type_id');
     }
 }

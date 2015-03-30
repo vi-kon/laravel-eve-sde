@@ -31,7 +31,42 @@ class Denormalize extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function celestialStatistics() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\CelestialStatistics', 'item_id', 'celestial_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\CelestialStatistic', 'item_id', 'celestial_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function type() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function group() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Group', 'group_id', 'group_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function solarSystem() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'solar_system_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function constellation() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Constellation', 'constellation_id', 'constellation_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function region() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Region', 'region_id', 'region_id');
     }
 
     /**
@@ -51,56 +86,21 @@ class Denormalize extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function type() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function group() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Groups', 'group_id', 'group_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function solarSystem() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystems', 'solar_system_id', 'solar_system_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function constellation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Constellations', 'constellation_id', 'constellation_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function region() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Regions', 'region_id', 'region_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function locationScenes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\LocationScenes', 'item_id', 'location_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\LocationScene', 'item_id', 'location_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function locationWormholeClasses() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\LocationWormholeClasses', 'item_id', 'location_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\LocationWormholeClass', 'item_id', 'location_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function stations() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\Stations', 'item_id', 'station_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\Station', 'item_id', 'station_id');
     }
 }

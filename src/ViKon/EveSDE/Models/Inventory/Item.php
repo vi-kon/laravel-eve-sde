@@ -31,13 +31,13 @@ class Item extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function location() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Items', 'item_id', 'location_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Item', 'item_id', 'location_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function items() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Items', 'location_id', 'item_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Item', 'location_id', 'item_id');
     }
 }

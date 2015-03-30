@@ -31,6 +31,6 @@ class UniqueName extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function group() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Groups', 'group_id', 'group_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Group', 'group_id', 'group_id');
     }
 }

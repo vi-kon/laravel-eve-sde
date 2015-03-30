@@ -28,16 +28,16 @@ class Jump extends Model {
     protected $collection = 'map_jumps';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function destination() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Denormalize', 'item_id', 'destination_id');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function stargate() {
         return $this->hasOne('ViKon\EveSDE\Models\Map\Denormalize', 'item_id', 'stargate_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function destination() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Denormalize', 'item_id', 'destination_id');
     }
 }

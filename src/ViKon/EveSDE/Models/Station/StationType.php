@@ -31,27 +31,27 @@ class StationType extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function assemblyLineStations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineStations', 'station_type_id', 'station_type_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function operation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\Operations', 'operation_id', 'operation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineStation', 'station_type_id', 'station_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function stationType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'station_type_id');
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'station_type_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function operation() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\Operation', 'operation_id', 'operation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function stations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Station\Stations', 'station_type_id', 'station_type_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Station\Station', 'station_type_id', 'station_type_id');
     }
 }

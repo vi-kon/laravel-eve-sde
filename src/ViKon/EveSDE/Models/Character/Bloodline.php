@@ -31,27 +31,27 @@ class Bloodline extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function ancestries() {
-        return $this->hasMany('ViKon\EveSDE\Models\Character\Ancestries', 'bloodline_id', 'bloodline_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function race() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Races', 'race_id', 'race_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Character\Ancestry', 'bloodline_id', 'bloodline_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function shipType() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'ship_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'ship_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function corporation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'corporation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function race() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Race', 'race_id', 'race_id');
     }
 }

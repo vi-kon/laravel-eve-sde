@@ -31,6 +31,6 @@ class EveUnit extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function attributeTypes() {
-        return $this->hasMany('ViKon\EveSDE\Models\Damage\AttributeTypes', 'unit_id', 'unit_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Damage\AttributeType', 'unit_id', 'unit_id');
     }
 }

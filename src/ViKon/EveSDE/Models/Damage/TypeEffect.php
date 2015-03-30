@@ -30,14 +30,14 @@ class TypeEffect extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function effect() {
-        return $this->hasOne('ViKon\EveSDE\Models\Damage\Effects', 'effect_id', 'effect_id');
+    public function type() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
+    public function effect() {
+        return $this->hasOne('ViKon\EveSDE\Models\Damage\Effect', 'effect_id', 'effect_id');
     }
 }

@@ -30,14 +30,14 @@ class NPCCorporationResearchField extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function corporation() {
-        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'corporation_id');
+    public function skill() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'skill_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function skill() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'skill_id');
+    public function corporation() {
+        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
     }
 }

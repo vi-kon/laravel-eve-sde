@@ -31,6 +31,6 @@ class Service extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function operationServices() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\OperationServices', 'service_id', 'service_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\OperationService', 'service_id', 'service_id');
     }
 }

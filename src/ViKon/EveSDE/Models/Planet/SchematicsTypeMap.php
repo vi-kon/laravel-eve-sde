@@ -30,14 +30,14 @@ class SchematicsTypeMap extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
+    public function schematic() {
+        return $this->hasOne('ViKon\EveSDE\Models\Planet\Schematic', 'schematic_id', 'schematic_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function schematic() {
-        return $this->hasOne('ViKon\EveSDE\Models\Planet\Schematics', 'schematic_id', 'schematic_id');
+    public function type() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

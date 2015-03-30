@@ -31,6 +31,6 @@ class InstallationTypeContent extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function assemblyLineType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineTypes', 'assembly_line_type_id', 'assembly_line_type_id');
+        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 }

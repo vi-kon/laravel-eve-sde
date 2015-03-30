@@ -30,21 +30,21 @@ class AttributeType extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function category() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeCategories', 'category_id', 'category_id');
+    public function unit() {
+        return $this->belongsTo('ViKon\EveSDE\Models\EveUnit', 'unit_id', 'unit_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function unit() {
-        return $this->belongsTo('ViKon\EveSDE\Models\EveUnits', 'unit_id', 'unit_id');
+    public function category() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeCategory', 'category_id', 'category_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function typeAttributes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeAttributes', 'attribute_id', 'attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeAttribute', 'attribute_id', 'attribute_id');
     }
 }

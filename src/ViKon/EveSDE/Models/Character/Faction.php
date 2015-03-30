@@ -30,63 +30,63 @@ class Faction extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function militiaCorporation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'militia_corporation_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function solarSystem() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystems', 'solar_system_id', 'solar_system_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'solar_system_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function corporation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'corporation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function militiaCorporation() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'militia_corporation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function contrabandTypes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ContrabandTypes', 'faction_id', 'faction_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ContrabandType', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function controlTowerResources() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\ControlTowerResources', 'faction_id', 'faction_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\ControlTowerResource', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function constellations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\Constellations', 'faction_id', 'faction_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\Constellation', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function regions() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\Regions', 'faction_id', 'faction_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\Region', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function solarSystems() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystems', 'faction_id', 'faction_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystem', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function combatZones() {
-        return $this->hasMany('ViKon\EveSDE\Models\War\CombatZones', 'faction_id', 'faction_id');
+        return $this->hasMany('ViKon\EveSDE\Models\War\CombatZone', 'faction_id', 'faction_id');
     }
 }

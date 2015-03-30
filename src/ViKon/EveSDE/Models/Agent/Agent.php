@@ -30,28 +30,28 @@ class Agent extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function agentType() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Agent\AgentTypes', 'agent_type_id', 'agent_type_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function division() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCDivisions', 'division_id', 'division_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCDivision', 'division_id', 'division_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function corporation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'corporation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function agentType() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Agent\AgentType', 'agent_type_id', 'agent_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function researchAgents() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Agent\ResearchAgents', 'agent_id', 'agent_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Agent\ResearchAgent', 'agent_id', 'agent_id');
     }
 }

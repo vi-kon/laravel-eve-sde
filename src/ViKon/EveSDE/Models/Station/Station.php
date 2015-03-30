@@ -28,13 +28,6 @@ class Station extends Model {
     protected $collection = 'sta_stations';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function region() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Regions', 'region_id', 'region_id');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function station() {
@@ -45,34 +38,41 @@ class Station extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function operation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\Operations', 'operation_id', 'operation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\Operation', 'operation_id', 'operation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function stationType() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\StationTypes', 'station_type_id', 'station_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\StationType', 'station_type_id', 'station_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function corporation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'corporation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function solarSystem() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystems', 'solar_system_id', 'solar_system_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'solar_system_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function constellation() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Constellations', 'constellation_id', 'constellation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Constellation', 'constellation_id', 'constellation_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function region() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Region', 'region_id', 'region_id');
     }
 }

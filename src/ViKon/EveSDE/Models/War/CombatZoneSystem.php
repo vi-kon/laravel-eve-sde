@@ -28,16 +28,16 @@ class CombatZoneSystem extends Model {
     protected $collection = 'war_combat_zone_systems';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function combatZone() {
-        return $this->belongsTo('ViKon\EveSDE\Models\War\CombatZones', 'combat_zone_id', 'combat_zone_id');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function solarSystem() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\SolarSystems', 'solar_system_id', 'solar_system_id');
+        return $this->hasOne('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'solar_system_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function combatZone() {
+        return $this->belongsTo('ViKon\EveSDE\Models\War\CombatZone', 'combat_zone_id', 'combat_zone_id');
     }
 }

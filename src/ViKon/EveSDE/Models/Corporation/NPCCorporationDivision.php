@@ -30,14 +30,14 @@ class NPCCorporationDivision extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function division() {
-        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCDivisions', 'division_id', 'division_id');
+    public function corporation() {
+        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function corporation() {
-        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCCorporations', 'corporation_id', 'corporation_id');
+    public function division() {
+        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCDivision', 'division_id', 'division_id');
     }
 }

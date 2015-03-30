@@ -30,14 +30,14 @@ class TypeAttribute extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function attribute() {
-        return $this->hasOne('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'attribute_id');
+    public function type() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
+    public function attribute() {
+        return $this->hasOne('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'attribute_id');
     }
 }

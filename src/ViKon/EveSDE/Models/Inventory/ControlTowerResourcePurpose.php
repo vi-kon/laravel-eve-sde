@@ -31,6 +31,6 @@ class ControlTowerResourcePurpose extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function controlTowerResources() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\ControlTowerResources', 'purpose', 'purpose');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\ControlTowerResource', 'purpose', 'purpose');
     }
 }

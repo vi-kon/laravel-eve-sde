@@ -31,6 +31,6 @@ class Translation extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function tc() {
-        return $this->hasOne('ViKon\EveSDE\Models\Translation\TranslationColumns', 'tc_id', 'tc_id');
+        return $this->hasOne('ViKon\EveSDE\Models\Translation\TranslationColumn', 'tc_id', 'tc_id');
     }
 }

@@ -31,13 +31,13 @@ class NPCDivision extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function agents() {
-        return $this->hasMany('ViKon\EveSDE\Models\Agent\Agents', 'division_id', 'division_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Agent\Agent', 'division_id', 'division_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function nPCCorporationDivisions() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationDivisions', 'division_id', 'division_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'division_id', 'division_id');
     }
 }

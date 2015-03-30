@@ -30,14 +30,14 @@ class OperationService extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function service() {
-        return $this->hasOne('ViKon\EveSDE\Models\Station\Services', 'service_id', 'service_id');
+    public function operation() {
+        return $this->hasOne('ViKon\EveSDE\Models\Station\Operation', 'operation_id', 'operation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function operation() {
-        return $this->hasOne('ViKon\EveSDE\Models\Station\Operations', 'operation_id', 'operation_id');
+    public function service() {
+        return $this->hasOne('ViKon\EveSDE\Models\Station\Service', 'service_id', 'service_id');
     }
 }

@@ -30,14 +30,14 @@ class AssemblyLineTypeDetailPerGroup extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function group() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Groups', 'group_id', 'group_id');
+    public function assemblyLineType() {
+        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function assemblyLineType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineTypes', 'assembly_line_type_id', 'assembly_line_type_id');
+    public function group() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Group', 'group_id', 'group_id');
     }
 }

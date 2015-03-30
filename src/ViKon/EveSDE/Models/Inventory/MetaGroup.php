@@ -31,6 +31,6 @@ class MetaGroup extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function metaTypes() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\MetaTypes', 'meta_group_id', 'meta_group_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\MetaType', 'meta_group_id', 'meta_group_id');
     }
 }

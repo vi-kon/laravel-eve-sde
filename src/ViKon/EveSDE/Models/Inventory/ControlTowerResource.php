@@ -28,30 +28,30 @@ class ControlTowerResource extends Model {
     protected $collection = 'inv_control_tower_resources';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function faction() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Factions', 'faction_id', 'faction_id');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function controlTowerType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'control_tower_type_id');
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'control_tower_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function resourceType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'resource_type_id');
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'resource_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function purpose() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurposes', 'purpose', 'purpose');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose', 'purpose', 'purpose');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function faction() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Faction', 'faction_id', 'faction_id');
     }
 }

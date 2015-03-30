@@ -31,7 +31,7 @@ class Category extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function groups() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Groups', 'category_id', 'category_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Group', 'category_id', 'category_id');
     }
 
     /**

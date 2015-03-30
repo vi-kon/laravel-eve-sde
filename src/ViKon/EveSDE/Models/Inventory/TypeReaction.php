@@ -30,14 +30,14 @@ class TypeReaction extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
+    public function reactionType() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'reaction_type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function reactionType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'reaction_type_id');
+    public function type() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

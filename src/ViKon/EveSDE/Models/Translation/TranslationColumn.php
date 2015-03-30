@@ -31,6 +31,6 @@ class TranslationColumn extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function translations() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Translation\Translations', 'tc_id', 'tc_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Translation\Translation', 'tc_id', 'tc_id');
     }
 }

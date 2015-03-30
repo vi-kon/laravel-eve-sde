@@ -31,6 +31,6 @@ class Landmark extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function location() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystems', 'solar_system_id', 'location_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'location_id');
     }
 }

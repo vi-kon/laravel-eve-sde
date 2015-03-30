@@ -31,20 +31,20 @@ class CombatZone extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function combatZoneSystems() {
-        return $this->hasMany('ViKon\EveSDE\Models\War\CombatZoneSystems', 'combat_zone_id', 'combat_zone_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function centerSystem() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystems', 'solar_system_id', 'center_system_id');
+        return $this->hasMany('ViKon\EveSDE\Models\War\CombatZoneSystem', 'combat_zone_id', 'combat_zone_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function faction() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Factions', 'faction_id', 'faction_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Faction', 'faction_id', 'faction_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function centerSystem() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'center_system_id');
     }
 }

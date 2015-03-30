@@ -31,20 +31,20 @@ class MarketGroup extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function parentGroup() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\MarketGroups', 'market_group_id', 'parent_group_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\MarketGroup', 'market_group_id', 'parent_group_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function marketGroups() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\MarketGroups', 'parent_group_id', 'market_group_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\MarketGroup', 'parent_group_id', 'market_group_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function types() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Types', 'market_group_id', 'market_group_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Type', 'market_group_id', 'market_group_id');
     }
 }

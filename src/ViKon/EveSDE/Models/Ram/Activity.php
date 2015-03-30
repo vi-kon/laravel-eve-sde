@@ -31,6 +31,6 @@ class Activity extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function assemblyLineTypes() {
-        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineTypes', 'activity_id', 'activity_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'activity_id', 'activity_id');
     }
 }

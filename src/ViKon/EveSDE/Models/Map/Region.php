@@ -31,7 +31,7 @@ class Region extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function constellations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\Constellations', 'region_id', 'region_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\Constellation', 'region_id', 'region_id');
     }
 
     /**
@@ -44,56 +44,56 @@ class Region extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function regionJumpsTo() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\RegionJumps', 'region_id', 'to_region_id');
+    public function fromRegionJumps() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\RegionJump', 'region_id', 'from_region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function regionJumpsFrom() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\RegionJumps', 'region_id', 'from_region_id');
+    public function toRegionJumps() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\RegionJump', 'region_id', 'to_region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function faction() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Factions', 'faction_id', 'faction_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Faction', 'faction_id', 'faction_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function solarSystemJumpsTo() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJumps', 'to_region_id', 'region_id');
+    public function fromSolarSystemJumps() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'from_region_id', 'region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function solarSystemJumpsFrom() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJumps', 'from_region_id', 'region_id');
+    public function toSolarSystemJumps() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'to_region_id', 'region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function solarSystems() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystems', 'region_id', 'region_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystem', 'region_id', 'region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function assemblyLineStations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineStations', 'region_id', 'region_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineStation', 'region_id', 'region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function stations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Station\Stations', 'region_id', 'region_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Station\Station', 'region_id', 'region_id');
     }
 }

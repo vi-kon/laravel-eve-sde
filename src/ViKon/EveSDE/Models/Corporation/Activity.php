@@ -31,6 +31,6 @@ class Activity extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function operations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Station\Operations', 'activity_id', 'activity_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Station\Operation', 'activity_id', 'activity_id');
     }
 }

@@ -30,14 +30,14 @@ class ResearchAgent extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Types', 'type_id', 'type_id');
+    public function agent() {
+        return $this->hasOne('ViKon\EveSDE\Models\Agent\Agent', 'agent_id', 'agent_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function agent() {
-        return $this->hasOne('ViKon\EveSDE\Models\Agent\Agents', 'agent_id', 'agent_id');
+    public function type() {
+        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

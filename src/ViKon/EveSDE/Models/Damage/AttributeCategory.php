@@ -31,6 +31,6 @@ class AttributeCategory extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function attributeTypes() {
-        return $this->hasMany('ViKon\EveSDE\Models\Damage\AttributeTypes', 'category_id', 'category_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Damage\AttributeType', 'category_id', 'category_id');
     }
 }

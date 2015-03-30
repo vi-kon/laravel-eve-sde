@@ -30,15 +30,15 @@ class Constellation extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function faction() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Factions', 'faction_id', 'faction_id');
+    public function region() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Region', 'region_id', 'region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function region() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\Regions', 'region_id', 'region_id');
+    public function faction() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Faction', 'faction_id', 'faction_id');
     }
 
     /**
@@ -52,27 +52,27 @@ class Constellation extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function solarSystemJumpsFrom() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJumps', 'from_constellation_id', 'constellation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'from_constellation_id', 'constellation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function solarSystemJumpsTo() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJumps', 'to_constellation_id', 'constellation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'to_constellation_id', 'constellation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function solarSystems() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystems', 'constellation_id', 'constellation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystem', 'constellation_id', 'constellation_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function stations() {
-        return $this->hasMany('ViKon\EveSDE\Models\Station\Stations', 'constellation_id', 'constellation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Station\Station', 'constellation_id', 'constellation_id');
     }
 }

@@ -31,13 +31,13 @@ class Race extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function bloodlines() {
-        return $this->hasMany('ViKon\EveSDE\Models\Character\Bloodlines', 'race_id', 'race_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Character\Bloodline', 'race_id', 'race_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function types() {
-        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Types', 'race_id', 'race_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\Type', 'race_id', 'race_id');
     }
 }

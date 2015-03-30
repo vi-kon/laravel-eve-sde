@@ -31,70 +31,70 @@ class Type extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function researchAgents() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Agent\ResearchAgents', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Agent\ResearchAgent', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function bloodlines() {
-        return $this->hasMany('ViKon\EveSDE\Models\Character\Bloodlines', 'ship_type_id', 'type_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Character\Bloodline', 'ship_type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function nPCCorporationResearchFields() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationResearchFields', 'type_id', 'skill_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField', 'type_id', 'skill_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function nPCCorporationTrades() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationTrades', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationTrade', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function typeAttributes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeAttributes', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeAttribute', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function typeEffects() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeEffects', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeEffect', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function contrabandTypes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ContrabandTypes', 'type_id', 'type_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function marketGroup() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\MarketGroups', 'market_group_id', 'market_group_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ContrabandType', 'type_id', 'type_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function group() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Groups', 'group_id', 'group_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Group', 'group_id', 'group_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function race() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Character\Races', 'race_id', 'race_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Character\Race', 'race_id', 'race_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function marketGroup() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\MarketGroup', 'market_group_id', 'market_group_id');
     }
 
     /**
@@ -108,7 +108,7 @@ class Type extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function solarSystems() {
-        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystems', 'sun_type_id', 'type_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystem', 'sun_type_id', 'type_id');
     }
 
     /**
@@ -129,6 +129,6 @@ class Type extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function stationTypes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\StationTypes', 'type_id', 'station_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\StationType', 'type_id', 'station_type_id');
     }
 }

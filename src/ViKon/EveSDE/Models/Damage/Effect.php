@@ -30,63 +30,63 @@ class Effect extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function fittingUsageChanceAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'fitting_usage_chance_attribute_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
     public function durationAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'duration_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'duration_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function trackingSpeedAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'tracking_speed_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'tracking_speed_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function dischargeAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'discharge_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'discharge_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function rangeAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'range_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'range_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function falloffAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'falloff_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'falloff_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function npcUsageChanceAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'npc_usage_chance_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'npc_usage_chance_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function npcActivationChanceAttribute() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeTypes', 'attribute_id', 'npc_activation_chance_attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'npc_activation_chance_attribute_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function fittingUsageChanceAttribute() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'fitting_usage_chance_attribute_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function typeEffects() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeEffects', 'effect_id', 'effect_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeEffect', 'effect_id', 'effect_id');
     }
 }

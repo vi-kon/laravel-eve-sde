@@ -31,6 +31,6 @@ class AgentType extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function agents() {
-        return $this->hasMany('ViKon\EveSDE\Models\Agent\Agents', 'agent_type_id', 'agent_type_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Agent\Agent', 'agent_type_id', 'agent_type_id');
     }
 }

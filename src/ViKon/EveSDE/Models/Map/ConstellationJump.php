@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ConstellationJump
+ * ViKon\EveSDE\Models\Map\ConstellationJump
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer $from_region_id
  * @property integer $from_constellation_id
  * @property integer $to_constellation_id

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class UniqueName
+ * ViKon\EveSDE\Models\Inventory\UniqueName
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                   $item_id
  * @property string                                    $item_name
  * @property integer                                   $group_id

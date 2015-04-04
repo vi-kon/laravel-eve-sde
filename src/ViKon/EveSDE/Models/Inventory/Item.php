@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Item
+ * ViKon\EveSDE\Models\Inventory\Item
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                                                             $item_id
  * @property integer                                                                             $type_id
  * @property integer                                                                             $owner_id

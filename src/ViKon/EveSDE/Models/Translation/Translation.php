@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Translation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Translation
+ * ViKon\EveSDE\Models\Translation\Translation
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Translation
  * @property integer                                                 $tc_id
  * @property integer                                                 $key_id
  * @property string                                                  $language_id
@@ -44,9 +42,9 @@ class Translation extends Model {
     protected $collection = 'trn_translations';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function tc() {
-        return $this->hasOne('ViKon\EveSDE\Models\Translation\TranslationColumn', 'tc_id', 'tc_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Translation\TranslationColumn', 'tc_id', 'tc_id');
     }
 }

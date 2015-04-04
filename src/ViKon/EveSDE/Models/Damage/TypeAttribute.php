@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Damage;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TypeAttribute
+ * ViKon\EveSDE\Models\Damage\TypeAttribute
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Damage
  * @property integer                                        $type_id
  * @property integer                                        $attribute_id
  * @property integer                                        $value_int
@@ -44,16 +42,16 @@ class TypeAttribute extends Model {
     protected $collection = 'dgm_type_attributes';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function attribute() {
-        return $this->hasOne('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'attribute_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\AttributeType', 'attribute_id', 'attribute_id');
     }
 }

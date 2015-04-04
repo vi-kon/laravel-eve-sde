@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Corporation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class NPCCorporationResearchField
+ * ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Corporation
  * @property integer                                              $skill_id
  * @property integer                                              $corporation_id
  * @property-read \ViKon\EveSDE\Models\Inventory\Type             $skill
@@ -42,16 +40,16 @@ class NPCCorporationResearchField extends Model {
     protected $collection = 'crp_n_p_c_corporation_research_fields';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function skill() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'skill_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'skill_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function corporation() {
-        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
     }
 }

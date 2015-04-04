@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SolarSystem
+ * ViKon\EveSDE\Models\Map\SolarSystem
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                                                                         $region_id
  * @property integer
  *           $constellation_id
@@ -48,12 +46,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Corporation\NPCCorporation[]
  *                $nPCCorporations
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]
- *                $denormalize
+ *                $denormalizes
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Landmark[]               $landmarks
- * @property-read \ViKon\EveSDE\Models\Map\SolarSystemJump
- *                $fromSolarSystemJumps
- * @property-read \ViKon\EveSDE\Models\Map\SolarSystemJump
- *                $toSolarSystemJumps
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
+ *                $solarSystemJumpsFrom
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
+ *                $solarSystemJumpsTo
  * @property-read \ViKon\EveSDE\Models\Map\Region                                                            $region
  * @property-read \ViKon\EveSDE\Models\Inventory\Type                                                        $sunType
  * @property-read \ViKon\EveSDE\Models\Character\Faction                                                     $faction
@@ -61,7 +59,7 @@ use Illuminate\Database\Eloquent\Model;
  *                $assemblyLineStations
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]            $stations
  * @property-read \ViKon\EveSDE\Models\War\CombatZoneSystem
- *                $combatZoneSystems
+ *                $combatZoneSystem
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\War\CombatZone[]
  *                $combatZones
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\SolarSystem whereRegionId($value)
@@ -131,7 +129,7 @@ class SolarSystem extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function denormalize() {
+    public function denormalizes() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'solar_system_id', 'solar_system_id');
     }
 
@@ -143,17 +141,17 @@ class SolarSystem extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function fromSolarSystemJumps() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystemJump', 'solar_system_id', 'from_solar_system_id');
+    public function solarSystemJumpsFrom() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'from_solar_system_id', 'solar_system_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function toSolarSystemJumps() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystemJump', 'solar_system_id', 'to_solar_system_id');
+    public function solarSystemJumpsTo() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'to_solar_system_id', 'solar_system_id');
     }
 
     /**
@@ -201,7 +199,7 @@ class SolarSystem extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function combatZoneSystems() {
+    public function combatZoneSystem() {
         return $this->belongsTo('ViKon\EveSDE\Models\War\CombatZoneSystem', 'solar_system_id', 'solar_system_id');
     }
 

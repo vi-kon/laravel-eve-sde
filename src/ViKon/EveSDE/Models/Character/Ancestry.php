@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Character;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Ancestry
+ * ViKon\EveSDE\Models\Character\Ancestry
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Character
  * @property integer                                       $ancestry_id
  * @property string                                        $ancestry_name
  * @property integer                                       $bloodline_id

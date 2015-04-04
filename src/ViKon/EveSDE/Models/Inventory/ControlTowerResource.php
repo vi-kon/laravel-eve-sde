@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ControlTowerResource
+ * ViKon\EveSDE\Models\Inventory\ControlTowerResource
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                                    $control_tower_type_id
  * @property integer                                                    $resource_type_id
  * @property \ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose $purpose
@@ -55,17 +53,17 @@ class ControlTowerResource extends Model {
     protected $collection = 'inv_control_tower_resources';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function controlTowerType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'control_tower_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'control_tower_type_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function resourceType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'resource_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'resource_type_id');
     }
 
     /**

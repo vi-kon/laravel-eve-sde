@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Character;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Attribute
+ * ViKon\EveSDE\Models\Character\Attribute
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Character
  * @property integer $attribute_id
  * @property string  $attribute_name
  * @property string  $description

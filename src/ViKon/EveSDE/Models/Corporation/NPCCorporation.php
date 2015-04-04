@@ -5,66 +5,92 @@ namespace ViKon\EveSDE\Models\Corporation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class NPCCorporation
+ * ViKon\EveSDE\Models\Corporation\NPCCorporation
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Corporation
  * @property integer
- *           $corporation_id
- * @property string                                                                                       $size
- * @property string                                                                                       $extent
+ *             $corporation_id
+ * @property string
+ *             $size
+ * @property string
+ *             $extent
  * @property integer
- *           $solar_system_id
- * @property integer                                                                                      $investor_id1
+ *             $solar_system_id
  * @property integer
- *           $investor_shares1
- * @property integer                                                                                      $investor_id2
+ *             $investor_id1
  * @property integer
- *           $investor_shares2
- * @property integer                                                                                      $investor_id3
+ *             $investor_shares1
  * @property integer
- *           $investor_shares3
- * @property integer                                                                                      $investor_id4
+ *             $investor_id2
  * @property integer
- *           $investor_shares4
- * @property integer                                                                                      $friend_id
- * @property integer                                                                                      $enemy_id
+ *             $investor_shares2
  * @property integer
- *           $public_shares
+ *             $investor_id3
  * @property integer
- *           $initial_price
- * @property float                                                                                        $min_security
- * @property boolean                                                                                      $scattered
- * @property integer                                                                                      $fringe
- * @property integer                                                                                      $corridor
- * @property integer                                                                                      $hub
- * @property integer                                                                                      $border
- * @property integer                                                                                      $faction_id
- * @property float                                                                                        $size_factor
+ *             $investor_shares3
  * @property integer
- *           $station_count
+ *             $investor_id4
  * @property integer
- *           $station_system_count
- * @property string                                                                                       $description
- * @property integer                                                                                      $icon_id
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[]             $agents
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Character\Bloodline[]     $bloodlines
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationDivision
- *                $nPCCorporationDivisions
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField
+ *             $investor_shares4
+ * @property integer
+ *             $friend_id
+ * @property integer
+ *             $enemy_id
+ * @property integer
+ *             $public_shares
+ * @property integer
+ *             $initial_price
+ * @property float
+ *             $min_security
+ * @property boolean
+ *             $scattered
+ * @property integer
+ *             $fringe
+ * @property integer
+ *             $corridor
+ * @property integer
+ *             $hub
+ * @property integer
+ *             $border
+ * @property integer
+ *             $faction_id
+ * @property float
+ *             $size_factor
+ * @property integer
+ *             $station_count
+ * @property integer
+ *             $station_system_count
+ * @property string
+ *             $description
+ * @property integer
+ *             $icon_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[]
+ *                  $agents
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Character\Bloodline[]
+ *                  $bloodlines
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Corporation\NPCCorporationDivision[]
+ *                  $nPCCorporationDivisions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField[]
  *                $nPCCorporationResearchFields
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationTrade
- *                $nPCCorporationTrades
- * @property-read \ViKon\EveSDE\Models\Map\SolarSystem                                                    $solarSystem
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor1
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor2
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor3
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $investor4
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $friend
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                         $enemy
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Corporation\NPCCorporationTrade[]
+ *                  $nPCCorporationTrades
+ * @property-read \ViKon\EveSDE\Models\Map\SolarSystem
+ *                  $solarSystem
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *                  $investor1
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *                  $investor2
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *                  $investor3
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *                  $investor4
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *                  $friend
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
+ *                  $enemy
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Ram\AssemblyLineStation[]
- *                $assemblyLineStations
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]         $stations
+ *                  $assemblyLineStations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]
+ *                  $stations
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation
  *         whereCorporationId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCCorporation whereSize($value)
@@ -157,25 +183,39 @@ class NPCCorporation extends Model {
         return $this->hasMany('ViKon\EveSDE\Models\Character\Bloodline', 'corporation_id', 'corporation_id');
     }
 
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function factions() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Character\Faction', 'corporation_id', 'corporation_id');
+//    }
+//
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function factions() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Character\Faction', 'militia_corporation_id', 'corporation_id');
+//    }
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function nPCCorporationDivisions() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'corporation_id', 'corporation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'corporation_id', 'corporation_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function nPCCorporationResearchFields() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField', 'corporation_id', 'corporation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationResearchField', 'corporation_id', 'corporation_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function nPCCorporationTrades() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationTrade', 'corporation_id', 'corporation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationTrade', 'corporation_id', 'corporation_id');
     }
 
     /**
@@ -192,12 +232,26 @@ class NPCCorporation extends Model {
         return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'investor_id1');
     }
 
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function nPCCorporations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'investor_id1', 'corporation_id');
+//    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function investor2() {
         return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'investor_id2');
     }
+
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function nPCCorporations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'investor_id2', 'corporation_id');
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -206,12 +260,26 @@ class NPCCorporation extends Model {
         return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'investor_id3');
     }
 
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function nPCCorporations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'investor_id3', 'corporation_id');
+//    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function investor4() {
         return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'investor_id4');
     }
+
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function nPCCorporations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'investor_id4', 'corporation_id');
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -220,12 +288,26 @@ class NPCCorporation extends Model {
         return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'friend_id');
     }
 
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function nPCCorporations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'friend_id', 'corporation_id');
+//    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function enemy() {
         return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'enemy_id');
     }
+
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function nPCCorporations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'enemy_id', 'corporation_id');
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

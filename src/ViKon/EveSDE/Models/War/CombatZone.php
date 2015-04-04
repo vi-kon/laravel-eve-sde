@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\War;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class CombatZone
+ * ViKon\EveSDE\Models\War\CombatZone
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\War
  * @property integer                                                                                   $combat_zone_id
  * @property string
  *           $combat_zone_name

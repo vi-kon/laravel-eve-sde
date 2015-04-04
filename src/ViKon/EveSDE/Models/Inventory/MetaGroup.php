@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class MetaGroup
+ * ViKon\EveSDE\Models\Inventory\MetaGroup
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                                                                 $meta_group_id
  * @property string                                                                                  $meta_group_name
  * @property string                                                                                  $description

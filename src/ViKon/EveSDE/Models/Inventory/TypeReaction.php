@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TypeReaction
+ * ViKon\EveSDE\Models\Inventory\TypeReaction
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                  $reaction_type_id
  * @property boolean                                  $input
  * @property integer                                  $type_id
@@ -45,16 +43,16 @@ class TypeReaction extends Model {
     protected $collection = 'inv_type_reactions';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function reactionType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'reaction_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'reaction_type_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

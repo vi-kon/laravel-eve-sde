@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TypeMaterial
+ * ViKon\EveSDE\Models\Inventory\TypeMaterial
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                  $type_id
  * @property integer                                  $material_type_id
  * @property integer                                  $quantity
@@ -43,16 +41,16 @@ class TypeMaterial extends Model {
     protected $collection = 'inv_type_materials';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function materialType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'material_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'material_type_id');
     }
 }

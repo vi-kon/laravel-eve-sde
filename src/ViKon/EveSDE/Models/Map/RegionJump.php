@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class RegionJump
+ * ViKon\EveSDE\Models\Map\RegionJump
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                              $from_region_id
  * @property integer                              $to_region_id
  * @property-read \ViKon\EveSDE\Models\Map\Region $fromRegion
@@ -40,16 +38,16 @@ class RegionJump extends Model {
     protected $collection = 'map_region_jumps';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function fromRegion() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\Region', 'region_id', 'from_region_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Region', 'region_id', 'from_region_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function toRegion() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\Region', 'region_id', 'to_region_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Region', 'region_id', 'to_region_id');
     }
 }

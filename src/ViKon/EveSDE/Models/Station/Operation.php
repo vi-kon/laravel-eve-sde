@@ -5,19 +5,19 @@ namespace ViKon\EveSDE\Models\Station;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Operation
+ * ViKon\EveSDE\Models\Station\Operation
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Station
- * @property integer                                                                                  $activity_id
- * @property integer                                                                                  $operation_id
- * @property string                                                                                   $operation_name
- * @property string                                                                                   $description
- * @property integer                                                                                  $fringe
- * @property integer                                                                                  $corridor
- * @property integer                                                                                  $hub
- * @property integer                                                                                  $border
- * @property integer                                                                                  $ratio
+ * @property integer                                                                                       $activity_id
+ * @property integer
+ *           $operation_id
+ * @property string
+ *           $operation_name
+ * @property string                                                                                        $description
+ * @property integer                                                                                       $fringe
+ * @property integer                                                                                       $corridor
+ * @property integer                                                                                       $hub
+ * @property integer                                                                                       $border
+ * @property integer                                                                                       $ratio
  * @property integer
  *           $caldari_station_type_id
  * @property integer
@@ -28,19 +28,22 @@ use Illuminate\Database\Eloquent\Model;
  *           $gallente_station_type_id
  * @property integer
  *           $jove_station_type_id
- * @property-read \ViKon\EveSDE\Models\Station\OperationService
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\OperationService[]
  *                $operationServices
- * @property-read \ViKon\EveSDE\Models\Corporation\Activity                                           $activity
+ * @property-read \ViKon\EveSDE\Models\Corporation\Activity                                                $activity
  * @property-read \ViKon\EveSDE\Models\Station\StationType
  *                $caldariStationType
  * @property-read \ViKon\EveSDE\Models\Station\StationType
  *                $minmatarStationType
- * @property-read \ViKon\EveSDE\Models\Station\StationType                                            $amarrStationType
+ * @property-read \ViKon\EveSDE\Models\Station\StationType
+ *                $amarrStationType
  * @property-read \ViKon\EveSDE\Models\Station\StationType
  *                $gallenteStationType
- * @property-read \ViKon\EveSDE\Models\Station\StationType                                            $joveStationType
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\StationType[] $stationTypes
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]     $stations
+ * @property-read \ViKon\EveSDE\Models\Station\StationType
+ *                $joveStationType
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\StationType[]
+ *                $stationTypes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Station\Station[]          $stations
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereActivityId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereOperationId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Station\Operation whereOperationName($value)
@@ -85,10 +88,10 @@ class Operation extends Model {
     protected $collection = 'sta_operations';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function operationServices() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Station\OperationService', 'operation_id', 'operation_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Station\OperationService', 'operation_id', 'operation_id');
     }
 
     /**

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Translation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TranslationLanguage
+ * ViKon\EveSDE\Models\Translation\TranslationLanguage
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Translation
  * @property integer $numeric_language_id
  * @property string  $language_id
  * @property string  $language_name

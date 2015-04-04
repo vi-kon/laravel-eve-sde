@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Corporation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class NPCCorporationDivision
+ * ViKon\EveSDE\Models\Corporation\NPCCorporationDivision
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Corporation
  * @property integer                                              $corporation_id
  * @property integer                                              $division_id
  * @property integer                                              $size
@@ -45,16 +43,16 @@ class NPCCorporationDivision extends Model {
     protected $collection = 'crp_n_p_c_corporation_divisions';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function corporation() {
-        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporation', 'corporation_id', 'corporation_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function division() {
-        return $this->hasOne('ViKon\EveSDE\Models\Corporation\NPCDivision', 'division_id', 'division_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCDivision', 'division_id', 'division_id');
     }
 }

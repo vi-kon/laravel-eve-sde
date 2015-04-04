@@ -5,16 +5,20 @@ namespace ViKon\EveSDE\Models\Corporation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class NPCDivision
+ * ViKon\EveSDE\Models\Corporation\NPCDivision
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Corporation
- * @property integer                                                                          $division_id
- * @property string                                                                           $division_name
- * @property string                                                                           $description
- * @property string                                                                           $leader_type
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[] $agents
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporationDivision                     $nPCCorporationDivisions
+ * @property integer
+ *           $division_id
+ * @property string
+ *           $division_name
+ * @property string
+ *           $description
+ * @property string
+ *           $leader_type
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[]
+ *                $agents
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Corporation\NPCCorporationDivision[]
+ *                $nPCCorporationDivisions
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCDivision
  *         whereDivisionId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Corporation\NPCDivision
@@ -55,9 +59,9 @@ class NPCDivision extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function nPCCorporationDivisions() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'division_id', 'division_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Corporation\NPCCorporationDivision', 'division_id', 'division_id');
     }
 }

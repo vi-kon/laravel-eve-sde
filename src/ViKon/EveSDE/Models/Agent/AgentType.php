@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Agent;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AgentType
+ * ViKon\EveSDE\Models\Agent\AgentType
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Agent
  * @property integer                                                                          $agent_type_id
  * @property string                                                                           $agent_type
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\Agent[] $agents

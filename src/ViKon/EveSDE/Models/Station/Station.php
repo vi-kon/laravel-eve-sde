@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Station;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Station
+ * ViKon\EveSDE\Models\Station\Station
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Station
  * @property integer                                              $station_id
  * @property integer                                              $security
  * @property float                                                $docking_cost_per_volume

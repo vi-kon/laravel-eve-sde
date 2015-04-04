@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Ram;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AssemblyLineTypeDetailPerGroup
+ * ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerGroup
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Ram
  * @property integer                                        $assembly_line_type_id
  * @property integer                                        $group_id
  * @property float                                          $time_multiplier
@@ -51,16 +49,16 @@ class AssemblyLineTypeDetailPerGroup extends Model {
     protected $collection = 'ram_assembly_line_type_detail_per_group';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function assemblyLineType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function group() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Group', 'group_id', 'group_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Group', 'group_id', 'group_id');
     }
 }

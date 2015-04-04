@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Damage;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Expression
+ * ViKon\EveSDE\Models\Damage\Expression
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Damage
  * @property integer $expression_id
  * @property integer $operand_id
  * @property integer $arg1

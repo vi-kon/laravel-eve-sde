@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Ram;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Activity
+ * ViKon\EveSDE\Models\Ram\Activity
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Ram
  * @property integer                                                                                   $activity_id
  * @property string                                                                                    $activity_name
  * @property string                                                                                    $icon_no

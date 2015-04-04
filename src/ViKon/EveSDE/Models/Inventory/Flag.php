@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Flag
+ * ViKon\EveSDE\Models\Inventory\Flag
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer $flag_id
  * @property string  $flag_name
  * @property string  $flag_text

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Region
+ * ViKon\EveSDE\Models\Map\Region
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                                                                      $region_id
  * @property string                                                                                       $region_name
  * @property float                                                                                        $x
@@ -24,16 +22,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property float                                                                                        $radius
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Constellation[]
  *                $constellations
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]         $denormalize
- * @property-read \ViKon\EveSDE\Models\Map\RegionJump
- *                $fromRegionJumps
- * @property-read \ViKon\EveSDE\Models\Map\RegionJump
- *                $toRegionJumps
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]         $denormalizes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\RegionJump[]
+ *                $regionJumpsFrom
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\RegionJump[]
+ *                $regionJumpsTo
  * @property-read \ViKon\EveSDE\Models\Character\Faction                                                  $faction
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
- *                $fromSolarSystemJumps
+ *                $solarSystemJumpsFrom
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
- *                $toSolarSystemJumps
+ *                $solarSystemJumpsTo
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystem[]         $solarSystems
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Ram\AssemblyLineStation[]
  *                $assemblyLineStations
@@ -85,22 +83,22 @@ class Region extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function denormalize() {
+    public function denormalizes() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'region_id', 'region_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function fromRegionJumps() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\RegionJump', 'region_id', 'from_region_id');
+    public function regionJumpsFrom() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\RegionJump', 'from_region_id', 'region_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function toRegionJumps() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Map\RegionJump', 'region_id', 'to_region_id');
+    public function regionJumpsTo() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\RegionJump', 'to_region_id', 'region_id');
     }
 
     /**
@@ -113,14 +111,14 @@ class Region extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function fromSolarSystemJumps() {
+    public function solarSystemJumpsFrom() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'from_region_id', 'region_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function toSolarSystemJumps() {
+    public function solarSystemJumpsTo() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\SolarSystemJump', 'to_region_id', 'region_id');
     }
 

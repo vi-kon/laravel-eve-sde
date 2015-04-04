@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class EveUnit
+ * ViKon\EveSDE\Models\EveUnit
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models
  * @property integer                                                                                   $unit_id
  * @property string                                                                                    $unit_name
  * @property string                                                                                    $display_name

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Station;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class StationType
+ * ViKon\EveSDE\Models\Station\StationType
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Station
  * @property integer
  *           $station_type_id
  * @property float                                                                                        $dock_entry_x
@@ -76,6 +74,41 @@ class StationType extends Model {
     public function assemblyLineStations() {
         return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineStation', 'station_type_id', 'station_type_id');
     }
+
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function operations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Station\Operation', 'caldari_station_type_id', 'station_type_id');
+//    }
+//
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function operations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Station\Operation', 'minmatar_station_type_id', 'station_type_id');
+//    }
+//
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function operations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Station\Operation', 'amarr_station_type_id', 'station_type_id');
+//    }
+//
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function operations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Station\Operation', 'gallente_station_type_id', 'station_type_id');
+//    }
+//
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+//     */
+//    public function operations() {
+//        return $this->hasMany('ViKon\EveSDE\Models\Station\Operation', 'jove_station_type_id', 'station_type_id');
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Denormalize
+ * ViKon\EveSDE\Models\Map\Denormalize
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                                                              $item_id
  * @property integer                                                                              $type_id
  * @property integer                                                                              $group_id
@@ -24,18 +22,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property float                                                                                $security
  * @property integer                                                                              $celestial_index
  * @property integer                                                                              $orbit_index
- * @property-read \ViKon\EveSDE\Models\Map\CelestialStatistic                                     $celestialStatistics
+ * @property-read \ViKon\EveSDE\Models\Map\CelestialStatistic                                     $celestialStatistic
  * @property-read \ViKon\EveSDE\Models\Inventory\Type                                             $type
  * @property-read \ViKon\EveSDE\Models\Inventory\Group                                            $group
  * @property-read \ViKon\EveSDE\Models\Map\SolarSystem                                            $solarSystem
  * @property-read \ViKon\EveSDE\Models\Map\Constellation                                          $constellation
  * @property-read \ViKon\EveSDE\Models\Map\Region                                                 $region
  * @property-read \ViKon\EveSDE\Models\Map\Denormalize                                            $orbit
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[] $denormalize
- * @property-read \ViKon\EveSDE\Models\Map\LocationScene                                          $locationScenes
- * @property-read \ViKon\EveSDE\Models\Map\LocationWormholeClass
- *                $locationWormholeClasses
- * @property-read \ViKon\EveSDE\Models\Station\Station                                            $stations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[] $denormalizes
+ * @property-read \ViKon\EveSDE\Models\Map\Jump                                                   $jump
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Jump[]        $jumps
+ * @property-read \ViKon\EveSDE\Models\Map\LocationScene                                          $locationScene
+ * @property-read \ViKon\EveSDE\Models\Map\LocationWormholeClass                                  $locationWormholeClass
+ * @property-read \ViKon\EveSDE\Models\Station\Station                                            $station
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Denormalize whereItemId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Denormalize whereTypeId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Map\Denormalize whereGroupId($value)
@@ -78,7 +77,7 @@ class Denormalize extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function celestialStatistics() {
+    public function celestialStatistic() {
         return $this->belongsTo('ViKon\EveSDE\Models\Map\CelestialStatistic', 'item_id', 'celestial_id');
     }
 
@@ -127,28 +126,42 @@ class Denormalize extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function denormalize() {
+    public function denormalizes() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'orbit_id', 'item_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function locationScenes() {
+    public function jump() {
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\Jump', 'item_id', 'stargate_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function jumps() {
+        return $this->hasMany('ViKon\EveSDE\Models\Map\Jump', 'destination_id', 'item_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function locationScene() {
         return $this->belongsTo('ViKon\EveSDE\Models\Map\LocationScene', 'item_id', 'location_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function locationWormholeClasses() {
+    public function locationWormholeClass() {
         return $this->belongsTo('ViKon\EveSDE\Models\Map\LocationWormholeClass', 'item_id', 'location_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function stations() {
+    public function station() {
         return $this->belongsTo('ViKon\EveSDE\Models\Station\Station', 'item_id', 'station_id');
     }
 }

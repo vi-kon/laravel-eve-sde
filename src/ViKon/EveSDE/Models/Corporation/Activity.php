@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Corporation;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Activity
+ * ViKon\EveSDE\Models\Corporation\Activity
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Corporation
  * @property integer                                                                                $activity_id
  * @property string                                                                                 $activity_name
  * @property string                                                                                 $description

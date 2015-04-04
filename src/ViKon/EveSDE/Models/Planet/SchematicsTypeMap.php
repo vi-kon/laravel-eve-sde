@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Planet;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SchematicsTypeMap
+ * ViKon\EveSDE\Models\Planet\SchematicsTypeMap
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Planet
  * @property integer                                    $schematic_id
  * @property integer                                    $type_id
  * @property integer                                    $quantity
@@ -46,16 +44,16 @@ class SchematicsTypeMap extends Model {
     protected $collection = 'planet_schematics_type_map';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function schematic() {
-        return $this->hasOne('ViKon\EveSDE\Models\Planet\Schematic', 'schematic_id', 'schematic_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Planet\Schematic', 'schematic_id', 'schematic_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Constellation
+ * ViKon\EveSDE\Models\Map\Constellation
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                                                                  $region_id
  * @property integer                                                                                  $constellation_id
  * @property string
@@ -26,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float                                                                                    $radius
  * @property-read \ViKon\EveSDE\Models\Map\Region                                                     $region
  * @property-read \ViKon\EveSDE\Models\Character\Faction                                              $faction
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]     $denormalize
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]     $denormalizes
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
  *                $solarSystemJumpsFrom
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\SolarSystemJump[]
@@ -90,7 +88,7 @@ class Constellation extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function denormalize() {
+    public function denormalizes() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'constellation_id', 'constellation_id');
     }
 

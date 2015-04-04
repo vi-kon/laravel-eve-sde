@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SolarSystemJump
+ * ViKon\EveSDE\Models\Map\SolarSystemJump
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                     $from_region_id
  * @property integer                                     $from_constellation_id
  * @property integer                                     $from_solar_system_id
@@ -70,17 +68,17 @@ class SolarSystemJump extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function fromSolarSystem() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'from_solar_system_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'from_solar_system_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function toSolarSystem() {
-        return $this->hasOne('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'to_solar_system_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Map\SolarSystem', 'solar_system_id', 'to_solar_system_id');
     }
 
     /**

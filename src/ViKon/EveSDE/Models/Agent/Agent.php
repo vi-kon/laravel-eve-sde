@@ -5,22 +5,20 @@ namespace ViKon\EveSDE\Models\Agent;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Agent
+ * ViKon\EveSDE\Models\Agent\Agent
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Agent
- * @property integer                                              $agent_id
- * @property integer                                              $division_id
- * @property integer                                              $corporation_id
- * @property integer                                              $location_id
- * @property integer                                              $level
- * @property integer                                              $quality
- * @property integer                                              $agent_type_id
- * @property boolean                                              $is_locator
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCDivision    $division
- * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation $corporation
- * @property-read \ViKon\EveSDE\Models\Agent\AgentType            $agentType
- * @property-read \ViKon\EveSDE\Models\Agent\ResearchAgent        $researchAgents
+ * @property integer                                                                                  $agent_id
+ * @property integer                                                                                  $division_id
+ * @property integer                                                                                  $corporation_id
+ * @property integer                                                                                  $location_id
+ * @property integer                                                                                  $level
+ * @property integer                                                                                  $quality
+ * @property integer                                                                                  $agent_type_id
+ * @property boolean                                                                                  $is_locator
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCDivision                                        $division
+ * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation                                     $corporation
+ * @property-read \ViKon\EveSDE\Models\Agent\AgentType                                                $agentType
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Agent\ResearchAgent[] $researchAgents
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Agent\Agent whereAgentId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Agent\Agent whereDivisionId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Agent\Agent whereCorporationId($value)
@@ -75,9 +73,9 @@ class Agent extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function researchAgents() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Agent\ResearchAgent', 'agent_id', 'agent_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Agent\ResearchAgent', 'agent_id', 'agent_id');
     }
 }

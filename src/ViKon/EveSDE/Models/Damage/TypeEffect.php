@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Damage;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TypeEffect
+ * ViKon\EveSDE\Models\Damage\TypeEffect
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Damage
  * @property integer                                  $type_id
  * @property integer                                  $effect_id
  * @property boolean                                  $is_default
@@ -42,16 +40,16 @@ class TypeEffect extends Model {
     protected $collection = 'dgm_type_effects';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function effect() {
-        return $this->hasOne('ViKon\EveSDE\Models\Damage\Effect', 'effect_id', 'effect_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Damage\Effect', 'effect_id', 'effect_id');
     }
 }

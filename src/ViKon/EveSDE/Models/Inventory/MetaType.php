@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class MetaType
+ * ViKon\EveSDE\Models\Inventory\MetaType
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer                                       $type_id
  * @property integer                                       $parent_type_id
  * @property integer                                       $meta_group_id

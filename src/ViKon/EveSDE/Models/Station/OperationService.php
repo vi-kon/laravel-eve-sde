@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Station;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class OperationService
+ * ViKon\EveSDE\Models\Station\OperationService
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Station
  * @property integer                                     $operation_id
  * @property integer                                     $service_id
  * @property-read \ViKon\EveSDE\Models\Station\Operation $operation
@@ -42,16 +40,16 @@ class OperationService extends Model {
     protected $collection = 'sta_operation_services';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function operation() {
-        return $this->hasOne('ViKon\EveSDE\Models\Station\Operation', 'operation_id', 'operation_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\Operation', 'operation_id', 'operation_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function service() {
-        return $this->hasOne('ViKon\EveSDE\Models\Station\Service', 'service_id', 'service_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Station\Service', 'service_id', 'service_id');
     }
 }

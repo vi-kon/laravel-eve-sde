@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ControlTowerResourcePurpose
+ * ViKon\EveSDE\Models\Inventory\ControlTowerResourcePurpose
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer
  *           $purpose
  * @property string

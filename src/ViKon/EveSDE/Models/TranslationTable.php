@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TranslationTable
+ * ViKon\EveSDE\Models\TranslationTable
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models
  * @property string  $source_table
  * @property string  $destination_table
  * @property string  $translated_key

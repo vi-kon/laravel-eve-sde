@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Agent;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ResearchAgent
+ * ViKon\EveSDE\Models\Agent\ResearchAgent
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Agent
  * @property integer                                  $agent_id
  * @property integer                                  $type_id
  * @property-read \ViKon\EveSDE\Models\Agent\Agent    $agent
@@ -40,16 +38,16 @@ class ResearchAgent extends Model {
     protected $collection = 'agt_research_agents';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function agent() {
-        return $this->hasOne('ViKon\EveSDE\Models\Agent\Agent', 'agent_id', 'agent_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Agent\Agent', 'agent_id', 'agent_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function type() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'type_id');
     }
 }

@@ -5,18 +5,22 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Category
+ * ViKon\EveSDE\Models\Inventory\Category
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
- * @property integer                                                                              $category_id
- * @property string                                                                               $category_name
- * @property string                                                                               $description
- * @property integer                                                                              $icon_id
- * @property boolean                                                                              $published
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Group[] $groups
- * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory
- *                $assemblyLineTypeDetailPerCategory
+ * @property integer
+ *           $category_id
+ * @property string
+ *           $category_name
+ * @property string
+ *           $description
+ * @property integer
+ *           $icon_id
+ * @property boolean
+ *           $published
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Group[]
+ *                $groups
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory[]
+ *                $assemblyLineTypeDetailPerCategories
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereCategoryId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereCategoryName($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Category whereDescription($value)
@@ -54,9 +58,9 @@ class Category extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function assemblyLineTypeDetailPerCategory() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory', 'category_id', 'category_id');
+    public function assemblyLineTypeDetailPerCategories() {
+        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerCategory', 'category_id', 'category_id');
     }
 }

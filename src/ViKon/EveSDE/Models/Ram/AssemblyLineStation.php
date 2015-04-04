@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Ram;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AssemblyLineStation
+ * ViKon\EveSDE\Models\Ram\AssemblyLineStation
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Ram
  * @property integer                                              $station_id
  * @property integer                                              $assembly_line_type_id
  * @property integer                                              $quantity
@@ -64,10 +62,10 @@ class AssemblyLineStation extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function assemblyLineType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 
     /**

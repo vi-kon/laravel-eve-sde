@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Character;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Race
+ * ViKon\EveSDE\Models\Character\Race
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Character
  * @property integer                                                                                  $race_id
  * @property string                                                                                   $race_name
  * @property string                                                                                   $description

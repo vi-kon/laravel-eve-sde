@@ -5,30 +5,42 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Group
+ * ViKon\EveSDE\Models\Inventory\Group
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
- * @property integer                                                                                   $group_id
- * @property integer                                                                                   $category_id
- * @property string                                                                                    $group_name
- * @property string                                                                                    $description
- * @property integer                                                                                   $icon_id
- * @property boolean                                                                                   $use_base_price
+ * @property integer
+ *           $group_id
+ * @property integer
+ *           $category_id
+ * @property string
+ *           $group_name
+ * @property string
+ *           $description
+ * @property integer
+ *           $icon_id
+ * @property boolean
+ *           $use_base_price
  * @property boolean
  *           $allow_manufacture
- * @property boolean                                                                                   $allow_recycler
- * @property boolean                                                                                   $anchored
- * @property boolean                                                                                   $anchorable
+ * @property boolean
+ *           $allow_recycler
+ * @property boolean
+ *           $anchored
+ * @property boolean
+ *           $anchorable
  * @property boolean
  *           $fittable_non_singleton
- * @property boolean                                                                                   $published
- * @property-read \ViKon\EveSDE\Models\Inventory\Category                                              $category
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Type[]       $types
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\UniqueName[] $uniqueNames
- * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]      $denormalize
- * @property-read \ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerGroup
- *                $assemblyLineTypeDetailPerGroup
+ * @property boolean
+ *           $published
+ * @property-read \ViKon\EveSDE\Models\Inventory\Category
+ *                $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\Type[]
+ *                $types
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\UniqueName[]
+ *                $uniqueNames
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Map\Denormalize[]
+ *                $denormalizes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerGroup[]
+ *                $assemblyLineTypeDetailPerGroups
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Group whereGroupId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Group whereCategoryId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Group whereGroupName($value)
@@ -90,14 +102,14 @@ class Group extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function denormalize() {
+    public function denormalizes() {
         return $this->hasMany('ViKon\EveSDE\Models\Map\Denormalize', 'group_id', 'group_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function assemblyLineTypeDetailPerGroup() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerGroup', 'group_id', 'group_id');
+    public function assemblyLineTypeDetailPerGroups() {
+        return $this->hasMany('ViKon\EveSDE\Models\Ram\AssemblyLineTypeDetailPerGroup', 'group_id', 'group_id');
     }
 }

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class LocationScene
+ * ViKon\EveSDE\Models\Map\LocationScene
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                   $location_id
  * @property integer                                   $graphic_id
  * @property-read \ViKon\EveSDE\Models\Map\Denormalize $location

@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Damage;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AttributeCategory
+ * ViKon\EveSDE\Models\Damage\AttributeCategory
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Damage
  * @property integer                                                                                   $category_id
  * @property string                                                                                    $category_name
  * @property string

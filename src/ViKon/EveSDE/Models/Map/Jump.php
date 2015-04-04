@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Jump
+ * ViKon\EveSDE\Models\Map\Jump
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                   $stargate_id
  * @property integer                                   $destination_id
  * @property-read \ViKon\EveSDE\Models\Map\Denormalize $stargate

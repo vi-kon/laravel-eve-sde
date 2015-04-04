@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Inventory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Name
+ * ViKon\EveSDE\Models\Inventory\Name
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Inventory
  * @property integer $item_id
  * @property string  $item_name
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Inventory\Name whereItemId($value)

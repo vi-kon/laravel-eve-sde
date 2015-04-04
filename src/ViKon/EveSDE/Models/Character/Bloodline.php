@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Character;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Bloodline
+ * ViKon\EveSDE\Models\Character\Bloodline
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Character
  * @property integer                                                                                 $bloodline_id
  * @property string                                                                                  $bloodline_name
  * @property integer                                                                                 $race_id

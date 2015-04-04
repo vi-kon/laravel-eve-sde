@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Planet;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SchematicsPinMap
+ * ViKon\EveSDE\Models\Planet\SchematicsPinMap
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Planet
  * @property integer                                    $schematic_id
  * @property integer                                    $pin_type_id
  * @property-read \ViKon\EveSDE\Models\Planet\Schematic $schematic
@@ -42,16 +40,16 @@ class SchematicsPinMap extends Model {
     protected $collection = 'planet_schematics_pin_map';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function schematic() {
-        return $this->hasOne('ViKon\EveSDE\Models\Planet\Schematic', 'schematic_id', 'schematic_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Planet\Schematic', 'schematic_id', 'schematic_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function pinType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'pin_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\Type', 'type_id', 'pin_type_id');
     }
 }

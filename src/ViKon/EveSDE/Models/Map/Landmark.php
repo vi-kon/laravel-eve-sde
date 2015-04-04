@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Landmark
+ * ViKon\EveSDE\Models\Map\Landmark
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                   $landmark_id
  * @property string                                    $landmark_name
  * @property string                                    $description

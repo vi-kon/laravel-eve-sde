@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Ram;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class InstallationTypeContent
+ * ViKon\EveSDE\Models\Ram\InstallationTypeContent
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Ram
  * @property integer                                        $installation_type_id
  * @property integer                                        $assembly_line_type_id
  * @property integer                                        $quantity
@@ -44,9 +42,9 @@ class InstallationTypeContent extends Model {
     protected $collection = 'ram_installation_type_contents';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function assemblyLineType() {
-        return $this->hasOne('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
+        return $this->belongsTo('ViKon\EveSDE\Models\Ram\AssemblyLineType', 'assembly_line_type_id', 'assembly_line_type_id');
     }
 }

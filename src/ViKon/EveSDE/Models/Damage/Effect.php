@@ -5,47 +5,57 @@ namespace ViKon\EveSDE\Models\Damage;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Effect
+ * ViKon\EveSDE\Models\Damage\Effect
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Damage
- * @property integer                                        $effect_id
- * @property string                                         $effect_name
- * @property integer                                        $effect_category
- * @property integer                                        $pre_expression
- * @property integer                                        $post_expression
- * @property string                                         $description
- * @property string                                         $guid
- * @property integer                                        $icon_id
- * @property boolean                                        $is_offensive
- * @property boolean                                        $is_assistance
- * @property integer                                        $duration_attribute_id
- * @property integer                                        $tracking_speed_attribute_id
- * @property integer                                        $discharge_attribute_id
- * @property integer                                        $range_attribute_id
- * @property integer                                        $falloff_attribute_id
- * @property boolean                                        $disallow_auto_repeat
- * @property boolean                                        $published
- * @property string                                         $display_name
- * @property boolean                                        $is_warp_safe
- * @property boolean                                        $range_chance
- * @property boolean                                        $electronic_chance
- * @property boolean                                        $propulsion_chance
- * @property integer                                        $distribution
- * @property string                                         $sfx_name
- * @property integer                                        $npc_usage_chance_attribute_id
- * @property integer                                        $npc_activation_chance_attribute_id
- * @property integer                                        $fitting_usage_chance_attribute_id
- * @property string                                         $modifier_info
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $durationAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $trackingSpeedAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $dischargeAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $rangeAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $falloffAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $npcUsageChanceAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $npcActivationChanceAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\AttributeType $fittingUsageChanceAttribute
- * @property-read \ViKon\EveSDE\Models\Damage\TypeEffect    $typeEffects
+ * @property integer                                                                                $effect_id
+ * @property string                                                                                 $effect_name
+ * @property integer                                                                                $effect_category
+ * @property integer                                                                                $pre_expression
+ * @property integer                                                                                $post_expression
+ * @property string                                                                                 $description
+ * @property string                                                                                 $guid
+ * @property integer                                                                                $icon_id
+ * @property boolean                                                                                $is_offensive
+ * @property boolean                                                                                $is_assistance
+ * @property integer
+ *           $duration_attribute_id
+ * @property integer
+ *           $tracking_speed_attribute_id
+ * @property integer
+ *           $discharge_attribute_id
+ * @property integer                                                                                $range_attribute_id
+ * @property integer
+ *           $falloff_attribute_id
+ * @property boolean
+ *           $disallow_auto_repeat
+ * @property boolean                                                                                $published
+ * @property string                                                                                 $display_name
+ * @property boolean                                                                                $is_warp_safe
+ * @property boolean                                                                                $range_chance
+ * @property boolean                                                                                $electronic_chance
+ * @property boolean                                                                                $propulsion_chance
+ * @property integer                                                                                $distribution
+ * @property string                                                                                 $sfx_name
+ * @property integer
+ *           $npc_usage_chance_attribute_id
+ * @property integer
+ *           $npc_activation_chance_attribute_id
+ * @property integer
+ *           $fitting_usage_chance_attribute_id
+ * @property string                                                                                 $modifier_info
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType                                         $durationAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType
+ *                $trackingSpeedAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType                                         $dischargeAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType                                         $rangeAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType                                         $falloffAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType
+ *                $npcUsageChanceAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType
+ *                $npcActivationChanceAttribute
+ * @property-read \ViKon\EveSDE\Models\Damage\AttributeType
+ *                $fittingUsageChanceAttribute
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Damage\TypeEffect[] $typeEffects
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\Effect whereEffectId($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\Effect whereEffectName($value)
  * @method static \Illuminate\Database\Query\Builder|\ViKon\EveSDE\Models\Damage\Effect whereEffectCategory($value)
@@ -161,9 +171,9 @@ class Effect extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function typeEffects() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Damage\TypeEffect', 'effect_id', 'effect_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Damage\TypeEffect', 'effect_id', 'effect_id');
     }
 }

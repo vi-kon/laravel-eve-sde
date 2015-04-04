@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Character;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Faction
+ * ViKon\EveSDE\Models\Character\Faction
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Character
  * @property integer
  *           $faction_id
  * @property string
@@ -37,7 +35,7 @@ use Illuminate\Database\Eloquent\Model;
  *                $corporation
  * @property-read \ViKon\EveSDE\Models\Corporation\NPCCorporation
  *                $militiaCorporation
- * @property-read \ViKon\EveSDE\Models\Inventory\ContrabandType
+ * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\ContrabandType[]
  *                $contrabandTypes
  * @property-read \Illuminate\Database\Eloquent\Collection|\ViKon\EveSDE\Models\Inventory\ControlTowerResource[]
  *                $controlTowerResources
@@ -108,10 +106,10 @@ class Faction extends Model {
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function contrabandTypes() {
-        return $this->belongsTo('ViKon\EveSDE\Models\Inventory\ContrabandType', 'faction_id', 'faction_id');
+        return $this->hasMany('ViKon\EveSDE\Models\Inventory\ContrabandType', 'faction_id', 'faction_id');
     }
 
     /**

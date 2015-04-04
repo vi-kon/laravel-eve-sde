@@ -5,10 +5,8 @@ namespace ViKon\EveSDE\Models\Map;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class CelestialStatistic
+ * ViKon\EveSDE\Models\Map\CelestialStatistic
  *
- * @author  Kovács Vince <vincekovacs@hotmail.com>
- * @package ViKon\EveSDE\Models\Map
  * @property integer                                   $celestial_id
  * @property float                                     $temperature
  * @property string                                    $spectral_class
